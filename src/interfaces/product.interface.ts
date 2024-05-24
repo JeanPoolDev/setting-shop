@@ -13,5 +13,5 @@ export interface Product {
 }
 
 export type Category = 'teclado'|'audifono'|'memoria'|'monitor'
-export type Size = '256'|'480'|'960'|'19'|'24'|'27'|'32';
+export type Size = 'XS'|'S'|'M'|'L'|'XL'|'XXL'|'XXXL';
 export type Type = 'shirts'|'pants'|'hoodies'|'hats';
