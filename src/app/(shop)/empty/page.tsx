@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { IoCartOutline } from 'react-icons/io5';
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default function() {
+export default function EmptyPage() {
   return (
     <div className="flex justify-center items-center min-h-screen">
 

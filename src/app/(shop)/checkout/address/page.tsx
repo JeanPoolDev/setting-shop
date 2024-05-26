@@ -2,8 +2,7 @@ import Link from 'next/link';
 
 import { Title } from '@/components';
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default function() {
+export default function AddressPage() {
   return (
     <div className="flex flex-col sm:justify-center sm:items-center mb-72 px-10 sm:px-0">
 

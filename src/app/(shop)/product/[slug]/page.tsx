@@ -14,10 +14,7 @@ interface Props {
   };
 }
 
-
-
-// eslint-disable-next-line import/no-anonymous-default-export
-export default function ( { params }: Props ) {
+export default function ProductBySlugPage( { params }: Props ) {
 
   const { slug } = params;
   const product = initialData.products.find( product => product.slug === slug );

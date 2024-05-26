@@ -14,9 +14,7 @@ const productsInCart = [
   initialData.products[ 2 ],
 ];
 
-
-// eslint-disable-next-line import/no-anonymous-default-export
-export default function () {
+export default function CardPage() {
 
 
   // redirect('/empty');
