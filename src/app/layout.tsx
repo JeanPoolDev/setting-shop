@@ -4,8 +4,11 @@ import { inter } from '@/config/fonts';
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Setting | Shop",
-  description: "Tienda de Setting Oficial",
+  title: {
+    template: "%s - Setting | Shop",
+    default: "Inicio - Setting | Shop",
+  },
+  description: "Una tienda virtual de productos",
 };
 
 export default function RootLayout({
