@@ -37,7 +37,7 @@ export const ProductGridItem = ( { product }: Props ) => {
           href={ `/product/${ product.slug }` }>
           { product.title }
         </Link>
-        <span className="font-bold">${ product.price }</span>
+        <span className="font-bold">S/.{ product.price }</span>
       </div>
 
     </div>
