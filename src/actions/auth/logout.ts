@@ -7,6 +7,4 @@ export const logout = async() => {
 
   await signOut();
 
-  window.location.replace('/');
-
 }
