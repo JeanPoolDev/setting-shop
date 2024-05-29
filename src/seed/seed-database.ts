@@ -7,11 +7,18 @@ async function main(){
 
   //TODO: Borrar registros de las tablas
 
+    await prisma.user.deleteMany();
+
     await prisma.productoImagen.deleteMany();
     await prisma.producto.deleteMany();
     await prisma.categoria.deleteMany();
 
-  const {categories, products} = initialData;
+  const {categories, products, users} = initialData;
+
+  //TODO: usuarios 
+  await prisma.user.createMany({
+    data: users
+  });
 
   //TODO: Categorias
 
@@ -29,8 +36,6 @@ async function main(){
     map[category.name.toLowerCase()] = category.id;
     return map;
   },{} as Record<string, string>);
-
-  console.log(categoriesMap);
 
   //TODO: Insertar productos
 

@@ -11,7 +11,7 @@ export * from './products/product-grid/ProductGridItem';
 // export * from './paypal/PayPalButton'
 
 
-// export * from './providers/Providers';
+export * from './provider/Provider';
 
 
 export * from './product/slideshow/ProductSlideshow';
