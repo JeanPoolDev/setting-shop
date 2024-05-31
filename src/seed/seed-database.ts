@@ -1,13 +1,15 @@
-import { url } from "inspector";
 import prisma from "../lib/prisma";
 import { initialData } from "./seed";
+import { countries } from "./seed-countries";
 
 
 async function main(){
 
   //TODO: Borrar registros de las tablas
 
+    await prisma.userAddress.deleteMany();
     await prisma.user.deleteMany();
+    await prisma.country.deleteMany();
 
     await prisma.productoImagen.deleteMany();
     await prisma.producto.deleteMany();
@@ -20,14 +22,17 @@ async function main(){
     data: users
   });
 
+  //TODO: ciudades
+  await prisma.country.createMany({
+    data: countries
+  });
+
   //TODO: Categorias
 
-  const CategoriasData = categories.map((category) => ({
-    name: category
-  }));
+  const categoriesData = categories.map( (name) => ({ name }));
   
   await prisma.categoria.createMany({
-    data: CategoriasData
+    data: categoriesData
   })
 
   const categoriesDB = await prisma.categoria.findMany();

@@ -1,14 +1,9 @@
 import { auth } from "@/auth.config";
 import { redirect } from "next/navigation";
 
-interface ShopLayoutProps{
+export default async function ShopLayout ({ children } : {
   children: React.ReactNode;
-}
-
-const ShopLayout: React.FC<ShopLayoutProps> = async ({
-  children
-}) => {
-
+}) {
   const session = await auth();
 
 
@@ -27,5 +22,3 @@ const ShopLayout: React.FC<ShopLayoutProps> = async ({
     </main>
    );
 }
- 
-export default ShopLayout;
