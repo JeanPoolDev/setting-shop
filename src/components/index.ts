@@ -8,10 +8,10 @@ export * from './products/product-grid/ProductGridItem';
 // export * from './orders/OrderStatus';
 
 
-// export * from './paypal/PayPalButton'
+export * from './paypal/PaypalButton'
 
 
-export * from './provider/Provider';
+export * from './providers/Providers';
 
 
 export * from './product/slideshow/ProductSlideshow';

@@ -22,6 +22,11 @@ export const Sidebar = () => {
   const { data: session } = useSession();
   const isAuthenticated = !!session?.user;
   const isAdmin = session?.user.role === "admin";
+
+  const onLogout = async() => {
+    await logout();
+    window.location.replace('/');
+  }
  
 
   return (
@@ -107,7 +112,7 @@ export const Sidebar = () => {
         {isAuthenticated && (
           <button
             className="flex w-full items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
-            onClick={() => logout()}
+            onClick={() => onLogout()}
           >
             <IoLogOutOutline size={25} />
             <span className="ml-3 text-lg">Salir</span>
