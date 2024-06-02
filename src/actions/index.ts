@@ -19,3 +19,10 @@ export { placeOrder } from './order/place-order'
 export { getOrdersByUser } from  './order/get-orders-by-user'
 export { setTransactionId } from './payments/set-transaction-id'
 export * from './payments/paypal-check-payment'
+export { getPaginatedOrders } from './order/get-paginated-orders'
+export { getPaginatedUsers } from './user/get-paginater-users';
+export { changeUserRole } from './user/change-user-role';
+export { getCategories } from './category/get-categories';
+export { deleteProductImage } from './product/delete-product-image';
+
+export { createUpdateProduct } from './product/create-update-product';

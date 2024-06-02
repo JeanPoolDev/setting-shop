@@ -10,7 +10,7 @@ interface SeedProduct {
     tags: string[];
     title: string;
     type: ValidTypes;
-    gender: 'teclado'|'audifono'|'memoria'|'monitor'
+    gender: 'teclado'|'audifono'|'memoria'|'monitor';
 }
 
 interface SeedUser {

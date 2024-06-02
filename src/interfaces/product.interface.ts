@@ -22,7 +22,12 @@ export interface CartProduct {
   image: string;
 }
 
+export interface ProductImage {
+  id: number;
+  url: string;
+  productId: string;
+}
 
-export type Category = 'teclado'|'audifono'|'memoria'|'monitor'
+type Category = 'teclado'|'audifono'|'memoria'|'monitor'
 export type Size = 'XS'|'S'|'M'|'L'|'XL'|'XXL'|'XXXL';
 export type Type = 'teros'|'logitech'|'reddragon'|'halion';
