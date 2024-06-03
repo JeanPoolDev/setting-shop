@@ -7,16 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Size {
-  XS
-  S
-  M
-  L
-  XL
-  XXL
-  XXXL
-}
-
 enum Gender {
   teclado
   audifono
@@ -41,7 +31,6 @@ model Producto {
   description String
   inStock     Int
   price       Float    @default(0)
-  sizes       Size[]   @default([])
   slug        String   @unique  
   tags        String[] @default([])
   gender      Gender
@@ -128,7 +117,6 @@ model OrderItem {
   id       String @id @default(uuid())
   quantity Int
   price    Float
-  size     Size
 
   // Relaciones
   order   Order  @relation(fields: [orderId], references: [id])

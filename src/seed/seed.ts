@@ -5,7 +5,6 @@ interface SeedProduct {
     images: string[];
     inStock: number;
     price: number;
-    sizes: ValidSizes[];
     slug: string;
     tags: string[];
     title: string;
@@ -20,8 +19,6 @@ interface SeedUser {
   role: 'admin'|'user'
 }
 
-
-type ValidSizes = 'XS'|'S'|'M'|'L'|'XL'|'XXL'|'XXXL';
 type ValidTypes = 'teros'|'logitech'|'reddragon'|'halion';
 
 interface SeedData {
@@ -29,9 +26,6 @@ interface SeedData {
     categories: string[];
     products: SeedProduct[];
 }
-
-
-
 
 export const initialData: SeedData = {
 
@@ -64,7 +58,6 @@ export const initialData: SeedData = {
             ],
             inStock: 7,
             price: 200,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "mens_chill_crew_neck_sweatshirt",
             type: 'teros',
             tags: ['sweatshirt'],
@@ -79,7 +72,6 @@ export const initialData: SeedData = {
             ],
             inStock: 5,
             price: 200,
-            sizes: ['XS','S','M','XL','XXL'],
             slug: "men_quilted_shirt_jacket",
             type: 'teros',
             tags: ['jacket'],
@@ -95,7 +87,6 @@ export const initialData: SeedData = {
             ],
             inStock: 10,
             price: 130,
-            sizes: ['S','M','L','XL','XXL'],
             slug: "men_raven_lightweight_zip_up_bomber_jacket",
             type: 'teros',
             tags: ['shirt'],
@@ -111,7 +102,6 @@ export const initialData: SeedData = {
             ],
             inStock: 50,
             price: 45,
-            sizes: ['XS','S','M','L'],
             slug: "men_turbine_long_sleeve_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -126,7 +116,6 @@ export const initialData: SeedData = {
             ],
             inStock: 50,
             price: 40,
-            sizes: ['M','L','XL','XXL'],
             slug: "men_turbine_short_sleeve_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -141,7 +130,6 @@ export const initialData: SeedData = {
             ],
             inStock: 0,
             price: 35,
-            sizes: ['M','L','XL','XXL'],
             slug: "men_cybertruck_owl_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -156,7 +144,6 @@ export const initialData: SeedData = {
             ],
             inStock: 15,
             price: 35,
-            sizes: ['S','M','L','XL'],
             slug: "men_solar_roof_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -171,7 +158,6 @@ export const initialData: SeedData = {
             ],
             inStock: 17,
             price: 35,
-            sizes: ['XS','S','XL','XXL'],
             slug: "men_let_the_sun_shine_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -186,7 +172,6 @@ export const initialData: SeedData = {
             ],
             inStock: 12,
             price: 35,
-            sizes: ['XS','S','M'],
             slug: "men_3d_large_wordmark_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -201,7 +186,6 @@ export const initialData: SeedData = {
             ],
             inStock: 5,
             price: 35,
-            sizes: ['XS','S'],
             slug: "men_3d_t_logo_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -216,7 +200,6 @@ export const initialData: SeedData = {
             ],
             inStock: 2,
             price: 35,
-            sizes: ['XS','S','M'],
             slug: "men_3d_small_wordmark_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -231,7 +214,6 @@ export const initialData: SeedData = {
             ],
             inStock: 82,
             price: 35,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "men_plaid_mode_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -246,7 +228,6 @@ export const initialData: SeedData = {
             ],
             inStock: 24,
             price: 35,
-            sizes: ['XL','XXL'],
             slug: "men_powerwall_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -261,7 +242,6 @@ export const initialData: SeedData = {
             ],
             inStock: 5,
             price: 30,
-            sizes: ['XS','S','XXL'],
             slug: "men_battery_day_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -276,7 +256,6 @@ export const initialData: SeedData = {
             ],
             inStock: 150,
             price: 30,
-            sizes: ['M','L'],
             slug: "men_cybertruck_bulletproof_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -291,7 +270,6 @@ export const initialData: SeedData = {
             ],
             inStock: 10,
             price: 35,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "men_haha_yes_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -306,7 +284,6 @@ export const initialData: SeedData = {
             ],
             inStock: 34,
             price: 35,
-            sizes: ['XS','S','M','L'],
             slug: "men_s3xy_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -321,7 +298,6 @@ export const initialData: SeedData = {
             ],
             inStock: 15,
             price: 40,
-            sizes: ['XL','XXL'],
             slug: "men_3d_wordmark_long_sleeve_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -336,7 +312,6 @@ export const initialData: SeedData = {
             ],
             inStock: 12,
             price: 40,
-            sizes: ['XS','XXL'],
             slug: "men_3d_t_logo_long_sleeve_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -351,7 +326,6 @@ export const initialData: SeedData = {
             ],
             inStock: 10,
             price: 115,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "men_raven_lightweight_hoodie",
             type: 'reddragon',
             tags: ['hoodie'],
@@ -366,7 +340,6 @@ export const initialData: SeedData = {
             ],
             inStock: 10,
             price: 130,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "chill_pullover_hoodie",
             type: 'reddragon',
             tags: ['hoodie'],
@@ -381,7 +354,6 @@ export const initialData: SeedData = {
             ],
             inStock: 100,
             price: 85,
-            sizes: ['XS','L','XL','XXL'],
             slug: "men_chill_full_zip_hoodie",
             type: 'teros',
             tags: ['shirt'],
@@ -396,7 +368,6 @@ export const initialData: SeedData = {
             ],
             inStock: 7,
             price: 85,
-            sizes: ['XS','S','M'],
             slug: "men_chill_quarter_zip_pullover_-_gray",
             type: 'teros',
             tags: ['shirt'],
@@ -411,7 +382,6 @@ export const initialData: SeedData = {
             ],
             inStock: 15,
             price: 85,
-            sizes: ['XS','S','M','L'],
             slug: "men_chill_quarter_zip_pullover_-_white",
             type: 'teros',
             tags: ['shirt'],
@@ -426,7 +396,6 @@ export const initialData: SeedData = {
             ],
             inStock: 15,
             price: 70,
-            sizes: ['XS','S','XL','XXL'],
             slug: "3d_large_wordmark_pullover_hoodie",
             type: 'reddragon',
             tags: ['hoodie'],
@@ -441,7 +410,6 @@ export const initialData: SeedData = {
             ],
             inStock: 13,
             price: 60,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "cybertruck_graffiti_hoodie",
             type: 'reddragon',
             tags: ['hoodie'],
@@ -456,7 +424,6 @@ export const initialData: SeedData = {
             ],
             inStock: 11,
             price: 30,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "relaxed_t_logo_hat",
             type: 'halion',
             tags: ['hats'],
@@ -471,7 +438,6 @@ export const initialData: SeedData = {
             ],
             inStock: 13,
             price: 35,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "thermal_cuffed_beanie",
             type: 'halion',
             tags: ['hats'],
@@ -486,7 +452,6 @@ export const initialData: SeedData = {
             ],
             inStock: 85,
             price: 225,
-            sizes: ['XS','S','M'],
             slug: "women_cropped_puffer_jacket",
             type: 'reddragon',
             tags: ['hoodie'],
@@ -501,7 +466,6 @@ export const initialData: SeedData = {
             ],
             inStock: 10,
             price: 130,
-            sizes: ['XS','S','M','XXL'],
             slug: "women_chill_half_zip_cropped_hoodie",
             type: 'reddragon',
             tags: ['hoodie'],
@@ -516,7 +480,6 @@ export const initialData: SeedData = {
             ],
             inStock: 9,
             price: 110,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "women_raven_slouchy_crew_sweatshirt",
             type: 'reddragon',
             tags: ['hoodie'],
@@ -531,7 +494,6 @@ export const initialData: SeedData = {
             ],
             inStock: 10,
             price: 45,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "women_turbine_cropped_long_sleeve_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -546,7 +508,6 @@ export const initialData: SeedData = {
             ],
             inStock: 0,
             price: 40,
-            sizes: ['XS','S'],
             slug: "women_turbine_cropped_short_sleeve_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -561,7 +522,6 @@ export const initialData: SeedData = {
             ],
             inStock: 30,
             price: 35,
-            sizes: ['XS','S','M','L','XL','XXL'],
             slug: "women_t_logo_short_sleeve_scoop_neck_tee",
             type: 'teros',
             tags: ['shirt'],
@@ -576,7 +536,7 @@ export const initialData: SeedData = {
             ],
             inStock: 16,
             price: 40,
-            sizes: ['XS','S','L','XL','XXL'],
+
             slug: "women_t_logo_long_sleeve_scoop_neck_tee",
             type: 'teros',
             tags: ['shirt'],

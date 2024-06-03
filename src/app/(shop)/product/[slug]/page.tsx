@@ -5,9 +5,7 @@ import { notFound } from 'next/navigation';
 import { titleFont } from '@/config/fonts';
 import { 
   ProductMobileSlideshow, 
-  ProductSlideshow, 
-  QuantitySelector, 
-  SizeSelector, 
+  ProductSlideshow,
   StockLabel} from '@/components';
   
 import { getProductBySlug } from '@/actions';
@@ -89,7 +87,7 @@ export default async function ProductBySlugPage( { params }: Props ) {
           { product.title }
         </h1>
 
-        <p className="text-lg mb-5">${ product.price }</p>
+        <p className="text-lg mb-5">S/.{ product.price }</p>
 
         <AddToCart product={ product }/>
 

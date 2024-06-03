@@ -58,19 +58,13 @@ export default async function OrdersPage({ searchParams }: Props) {
                 scope="col"
                 className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
               >
-                Género
+                Categoría
               </th>
               <th
                 scope="col"
                 className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
               >
                 Inventario
-              </th>
-              <th
-                scope="col"
-                className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-              >
-                Tallas
               </th>
             </tr>
           </thead>
@@ -109,10 +103,6 @@ export default async function OrdersPage({ searchParams }: Props) {
 
                 <td className="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
                   {product.inStock}
-                </td>
-
-                <td className="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
-                  {product.sizes.join(", ")}
                 </td>
               </tr>
             ))}

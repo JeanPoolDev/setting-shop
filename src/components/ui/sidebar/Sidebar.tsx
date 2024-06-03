@@ -74,13 +74,14 @@ export const Sidebar = () => {
 
 
         {/* Input */ }
-        <div className="relative mt-14">
-          <IoSearchOutline size={ 20 } className="absolute top-2 left-2" />
+        <div className="relative mt-10 mb-10">
+          {/* <IoSearchOutline size={ 20 } className="absolute top-2 left-2" />
           <input
             type="text"
             placeholder="Buscar"
             className="w-full bg-gray-50 rounded pl-10 py-1 pr-10 border-b-2 text-xl border-gray-200 focus:outline-none focus:border-blue-500"
-          />
+          /> */}
+          <h2 className='ml-3 text-2xl'>Menu</h2>
         </div>
 
         {/* Menú */ }
@@ -130,11 +131,14 @@ export const Sidebar = () => {
           </Link>
         )}
     
-
         {
           isAdmin && (
             <>
               <div className="w-full h-px bg-gray-200 my-5" />
+
+              <div className="relative mt-5">
+                <h2 className='ml-3 text-2xl'>Opciones de Administrador</h2>
+              </div>
 
               <Link
                 href="/admin/products"

@@ -34,7 +34,7 @@ export default async function GenderByPage({ params, searchParams }: Props) {
   const labels: Record<string, string> = {
     'teclado': 'Teclados',
     'audifono': 'Audifonos',
-    'memoria': 'Memorias',
+    'memoria': 'Mouses',
     'monitor': 'Monitores'
   }
 

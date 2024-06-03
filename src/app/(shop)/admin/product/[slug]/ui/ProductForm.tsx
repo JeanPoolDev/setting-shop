@@ -12,15 +12,12 @@ interface Props {
   categories: Category[];
 }
 
-const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
-
 interface FormInputs {
   title: string;
   slug: string;
   description: string;
   price: number;
   inStock: number;
-  sizes: string[];
   tags: string;
   gender: 'teclado'|'audifono'|'memoria'|'monitor';
   categoryId: string;
@@ -43,19 +40,10 @@ export const ProductForm = ({ product, categories }: Props) => {
     defaultValues: {
       ...product,
       tags: product.tags?.join(", "),
-      sizes: product.sizes ?? [],
 
       images: undefined,
     },
   });
-
-  watch("sizes");
-
-  const onSizeChanged = (size: string) => {
-    const sizes = new Set(getValues("sizes"));
-    sizes.has(size) ? sizes.delete(size) : sizes.add(size);
-    setValue("sizes", Array.from(sizes));
-  };
 
   const onSubmit = async (data: FormInputs) => {
     const formData = new FormData();
@@ -71,7 +59,6 @@ export const ProductForm = ({ product, categories }: Props) => {
     formData.append("description", productToSave.description);
     formData.append("price", productToSave.price.toString());
     formData.append("inStock", productToSave.inStock.toString());
-    formData.append("sizes", productToSave.sizes.toString());
     formData.append("tags", productToSave.tags);
     formData.append("categoryId", productToSave.categoryId);
     formData.append("gender", productToSave.gender);
@@ -113,7 +100,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Slug</span>
+          <span>Nombre de Producto por Url</span>
           <input
             type="text"
             className="p-2 border rounded-md bg-gray-200"
@@ -131,7 +118,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Price</span>
+          <span>Precio</span>
           <input
             type="number"
             className="p-2 border rounded-md bg-gray-200"
@@ -140,7 +127,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Tags</span>
+          <span>Etiquetas</span>
           <input
             type="text"
             className="p-2 border rounded-md bg-gray-200"
@@ -149,7 +136,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Gender</span>
+          <span>Categoria</span>
           <select
             className="p-2 border rounded-md bg-gray-200"
             {...register("gender", { required: true })}
@@ -163,7 +150,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Categoria</span>
+          <span>Marca</span>
           <select
             className="p-2 border rounded-md bg-gray-200"
             {...register("categoryId", { required: true })}
@@ -183,7 +170,7 @@ export const ProductForm = ({ product, categories }: Props) => {
       {/* Selector de tallas y fotos */}
       <div className="w-full">
         <div className="flex flex-col mb-2">
-          <span>Inventario</span>
+          <span>Inventario o Stock</span>
           <input
             type="number"
             className="p-2 border rounded-md bg-gray-200"
@@ -193,24 +180,6 @@ export const ProductForm = ({ product, categories }: Props) => {
 
         {/* As checkboxes */}
         <div className="flex flex-col">
-          <span>Tallas</span>
-          <div className="flex flex-wrap">
-            {sizes.map((size) => (
-              // bg-blue-500 text-white <--- si está seleccionado
-              <div
-                key={size}
-                onClick={() => onSizeChanged(size)}
-                className={clsx(
-                  "p-2 border cursor-pointer rounded-md mr-2 mb-2 w-14 transition-all text-center",
-                  {
-                    "bg-blue-500 text-white": getValues("sizes").includes(size),
-                  }
-                )}
-              >
-                <span>{size}</span>
-              </div>
-            ))}
-          </div>
 
           <div className="flex flex-col mb-2">
             <span>Fotos</span>
