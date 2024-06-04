@@ -5,6 +5,8 @@ import { Category, Product, ProductImage as ProductWithImage } from "@/interface
 import { createUpdateProduct, deleteProductImage } from "@/actions";
 import { useRouter } from 'next/navigation';
 import { ProductImage } from '@/components';
+import toast, { Toaster } from 'react-hot-toast';
+import { sleep } from "@/utils";
 
 interface Props {
   product: Partial<Product> & { ProductImage?: ProductWithImage[] };
@@ -70,15 +72,16 @@ export const ProductForm = ({ product, categories }: Props) => {
 
 
 
-
     const { ok, product:updatedProduct } = await createUpdateProduct(formData);
 
     if ( !ok ) {
-      alert('Producto no se pudo actualizar');
+      toast.error('Producto no se pudo actualizar');
       return;
     }
-    router.replace(`/admin/product/${ updatedProduct?.slug }`)
 
+    router.replace(`/admin/product/${ updatedProduct?.slug }`);
+    await sleep(1)
+    router.push('/admin/products')
 
   };
 
@@ -99,7 +102,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Nombre de Producto por Url</span>
+          <span>Slug</span>
           <input
             type="text"
             className="p-2 border rounded-md bg-gray-200"
@@ -126,7 +129,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Etiquetas</span>
+          <span>Tags</span>
           <input
             type="text"
             className="p-2 border rounded-md bg-gray-200"
@@ -135,7 +138,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Categoria</span>
+          <span>Gender</span>
           <select
             className="p-2 border rounded-md bg-gray-200"
             {...register("gender", { required: true })}
@@ -149,7 +152,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Marca</span>
+          <span>Categoria</span>
           <select
             className="p-2 border rounded-md bg-gray-200"
             {...register("categoryId", { required: true })}
@@ -164,13 +167,17 @@ export const ProductForm = ({ product, categories }: Props) => {
         </div>
 
         <button 
-          className="btn-primary w-full">Guardar</button>
+          className="btn-primary w-full"
+        >
+          <Toaster position="top-center"/>
+          Guardar
+        </button>
       </div>
 
       {/* Selector de tallas y fotos */}
       <div className="w-full">
         <div className="flex flex-col mb-2">
-          <span>Inventario o Stock</span>
+          <span>Inventario</span>
           <input
             type="number"
             className="p-2 border rounded-md bg-gray-200"
