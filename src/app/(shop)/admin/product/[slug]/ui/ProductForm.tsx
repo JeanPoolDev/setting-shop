@@ -2,7 +2,6 @@
 
 import { useForm } from "react-hook-form";
 import { Category, Product, ProductImage as ProductWithImage } from "@/interfaces";
-import clsx from "clsx";
 import { createUpdateProduct, deleteProductImage } from "@/actions";
 import { useRouter } from 'next/navigation';
 import { ProductImage } from '@/components';
@@ -71,13 +70,13 @@ export const ProductForm = ({ product, categories }: Props) => {
 
 
 
+
     const { ok, product:updatedProduct } = await createUpdateProduct(formData);
 
     if ( !ok ) {
       alert('Producto no se pudo actualizar');
       return;
     }
-
     router.replace(`/admin/product/${ updatedProduct?.slug }`)
 
 
@@ -164,7 +163,8 @@ export const ProductForm = ({ product, categories }: Props) => {
           </select>
         </div>
 
-        <button className="btn-primary w-full">Guardar</button>
+        <button 
+          className="btn-primary w-full">Guardar</button>
       </div>
 
       {/* Selector de tallas y fotos */}

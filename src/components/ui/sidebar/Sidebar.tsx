@@ -81,7 +81,7 @@ export const Sidebar = () => {
             placeholder="Buscar"
             className="w-full bg-gray-50 rounded pl-10 py-1 pr-10 border-b-2 text-xl border-gray-200 focus:outline-none focus:border-blue-500"
           /> */}
-          <h2 className='ml-3 text-2xl'>Menu</h2>
+          <h2 className='ml-3 text-2xl'>Menú</h2>
         </div>
 
         {/* Menú */ }
