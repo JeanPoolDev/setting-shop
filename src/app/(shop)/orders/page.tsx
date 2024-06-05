@@ -7,6 +7,10 @@ import { Title } from "@/components";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { IoCardOutline } from "react-icons/io5";
+import { DataTable } from "./[id]/data-table";
+import { OrdenesColumns, columns } from "./[id]/columns";
+
+
 
 export default async function OrdersPage() {
   const { ok, orders = [] } = await getOrdersByUser();
@@ -15,11 +19,22 @@ export default async function OrdersPage() {
     redirect("/auth/login");
   }
 
+  const formattedOrdenes: OrdenesColumns[] = orders.map((item) => ({
+    id: item.id,
+    firstName: item.OrderAddress?.firstName,
+    lastName: item.OrderAddress?.lastName,
+    isPaid: item.isPaid ? 'Pagado' : 'No Pagado'
+  }))
+
   return (
     <>
-      <Title title="Orders" />
+      <Title title="Ordenes" />
 
-      <div className="mb-10">
+      <DataTable columns={columns} data={formattedOrdenes}/>
+
+      <div className="mb-10"/> 
+
+      {/* <div className="mb-10">
         <table className="min-w-full">
           <thead className="bg-gray-200 border-b">
             <tr>
@@ -85,7 +100,7 @@ export default async function OrdersPage() {
             
           </tbody>
         </table>
-      </div>
+      </div> */}
     </>
   );
 }
