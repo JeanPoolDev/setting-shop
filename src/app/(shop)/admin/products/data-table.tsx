@@ -2,19 +2,13 @@
 
 import {
   ColumnDef,
-  ColumnFiltersState,
-  SortingState,
   flexRender,
-  VisibilityState,
   getCoreRowModel,
-  getFilteredRowModel,
+  ColumnFiltersState,
   getPaginationRowModel,
-  getSortedRowModel,
+  getFilteredRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 
 import {
   Table,
@@ -25,15 +19,9 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { useState } from "react"
-import { getRandomValues } from "crypto"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -45,72 +33,36 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
 
-  const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
     []
   )
-  const [columnVisibility, setColumnVisibility] =
-    useState<VisibilityState>({})
 
   const table = useReactTable({
     data,
     columns,
-    onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
-    getSortedRowModel: getSortedRowModel(),
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
-    onColumnVisibilityChange: setColumnVisibility,
     state: {
-      sorting,
       columnFilters,
-      columnVisibility,
     },
   })
 
   return (
     <div>
-      <div className="flex items-center justify-between py-4">
+
+      <div className="flex items-center py-4">
         <Input
-          placeholder="Filtrar Nombres.."
-          value={(table.getColumn("Nombre")?.getFilterValue() as string) ?? ""}
+          placeholder="Filtrar Título..."
+          value={(table.getColumn("Titulo")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("Nombre")?.setFilterValue(event.target.value)
+            table.getColumn("Titulo")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
-
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Filtrar Columnas
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter(
-                (column) => column.getCanHide()
-              )
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                )
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
-
       </div>
+
       <div className="rounded-md border">
       <Table>
         <TableHeader>
@@ -148,12 +100,14 @@ export function DataTable<TData, TValue>({
           ) : (
             <TableRow>
               <TableCell colSpan={columns.length} className="h-24 text-center">
-                Sin resultados
+                No results.
               </TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
+      </div>
+
       <div className="flex items-center justify-end space-x-2 py-4">
         <Button
           variant="outline"
@@ -161,7 +115,7 @@ export function DataTable<TData, TValue>({
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
-          Atras
+          Antes
         </Button>
         <Button
           variant="outline"
@@ -172,8 +126,6 @@ export function DataTable<TData, TValue>({
           Después
         </Button>
       </div>
-      </div>
     </div>
-    
   )
 }

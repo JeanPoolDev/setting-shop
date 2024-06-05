@@ -3,12 +3,15 @@ export const revalidate = 0;
 // https://tailwindcomponents.com/component/hoverable-table
 import { getPaginatedOrders, getPaginatedProductsWithImages } from "@/actions";
 import { Pagination, ProductImage, Title } from "@/components";
+import { Separator } from "@/components/ui/separator";
 import { currencyFormat } from "@/utils";
 import Image from "next/image";
 
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { IoCardOutline } from "react-icons/io5";
+import { ProductsColums, columns } from "./columns";
+import { DataTable } from "./data-table";
 
 interface Props {
   searchParams: {
@@ -19,8 +22,17 @@ interface Props {
 export default async function OrdersPage({ searchParams }: Props) {
   const page = searchParams.page ? parseInt(searchParams.page) : 1;
 
-  const { products, currentPage, totalPages } =
-    await getPaginatedProductsWithImages({ page });
+  const { products } =
+    await getPaginatedProductsWithImages({  });
+
+  const formattedProducts: ProductsColums[] = products.map((item) => ({
+    Imagen: item.productoImagen[0]?.url,
+    Titulo: item.title,
+    Precio: item.price,
+    Categoria: item.gender,
+    Inventario: item.inStock,
+    Slug: item.slug
+  }))
 
   return (
     <>
@@ -32,7 +44,13 @@ export default async function OrdersPage({ searchParams }: Props) {
         </Link>
       </div>
 
-      <div className="mb-10">
+      <Separator/>
+
+      <DataTable columns={columns} data={formattedProducts}/>
+
+      <div className="mb-10"/> 
+
+      {/* <div className="mb-10">
         <table className="min-w-full">
           <thead className="bg-gray-200 border-b">
             <tr>
@@ -108,9 +126,8 @@ export default async function OrdersPage({ searchParams }: Props) {
             ))}
           </tbody>
         </table>
-
-        <Pagination totalPages={totalPages} />
-      </div>
+        <Pagination totalPages={totalPages} />     
+      </div> */}
     </>
   );
 }

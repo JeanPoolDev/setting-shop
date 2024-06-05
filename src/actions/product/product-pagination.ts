@@ -4,24 +4,24 @@ import prisma from "@/lib/prisma";
 import { Gender } from "@prisma/client";
 
 interface PaginationOptions {
-  page?: number;
-  take?: number;
+  // page?: number;
+  // take?: number;
   gender?: Gender;
 }
 
 export const getPaginatedProductsWithImages = async ({
-  page = 1,
-  take = 12,
+  // page = 1,
+  // take = 12,
   gender,
 }: PaginationOptions) => {
-  if (isNaN(Number(page))) page = 1;
-  if (page < 1) page = 1;
+  // if (isNaN(Number(page))) page = 1;
+  // if (page < 1) page = 1;
 
   try {
     // 1. Obtener los productos
     const products = await prisma.producto.findMany({
-      take: take,
-      skip: (page - 1) * take,
+      // take: take,
+      // skip: (page - 1) * take,
       include: {
         productoImagen: {
           take: 2,
@@ -44,11 +44,11 @@ export const getPaginatedProductsWithImages = async ({
       },
     });
     
-    const totalPages = Math.ceil(totalCount / take);
+    // const totalPages = Math.ceil(totalCount / take);
 
     return {
-      currentPage: page,
-      totalPages: totalPages,
+      // currentPage: page,
+      // totalPages: totalPages,
       products: products.map((product) => ({
         ...product,
         images: product.productoImagen.map((image) => image.url),

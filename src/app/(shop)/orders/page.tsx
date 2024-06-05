@@ -9,6 +9,7 @@ import { redirect } from "next/navigation";
 import { IoCardOutline } from "react-icons/io5";
 import { DataTable } from "./[id]/data-table";
 import { OrdenesColumns, columns } from "./[id]/columns";
+import { Separator } from "@/components/ui/separator";
 
 
 
@@ -21,14 +22,16 @@ export default async function OrdersPage() {
 
   const formattedOrdenes: OrdenesColumns[] = orders.map((item) => ({
     id: item.id,
-    firstName: item.OrderAddress?.firstName,
-    lastName: item.OrderAddress?.lastName,
-    isPaid: item.isPaid ? 'Pagado' : 'No Pagado'
+    Nombre: item.OrderAddress?.firstName,
+    Apellido: item.OrderAddress?.lastName,
+    estaPagado: item.isPaid ? 'Pagado' : 'No Pagado'
   }))
 
   return (
     <>
       <Title title="Ordenes" />
+
+      <Separator/>
 
       <DataTable columns={columns} data={formattedOrdenes}/>
 
