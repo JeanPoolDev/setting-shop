@@ -1,7 +1,7 @@
 export const revalidate = 60;
 
 import { getPaginatedProductsWithImages } from '@/actions';
-import { Pagination, ProductGrid, Title } from '@/components';
+import { ProductGrid, Title } from '@/components';
 import { Gender } from '@prisma/client';
 import { redirect } from 'next/navigation';
 
@@ -21,8 +21,7 @@ export default async function GenderByPage({ params, searchParams }: Props) {
   
   const page = searchParams.page ? parseInt( searchParams.page ) : 1;
 
-  const { products, currentPage, totalPages } = await getPaginatedProductsWithImages({ 
-    page,
+  const { products } = await getPaginatedProductsWithImages({ 
     gender: gender as Gender,
   });
 
@@ -54,7 +53,7 @@ export default async function GenderByPage({ params, searchParams }: Props) {
         products={ products }
       />
 
-      <Pagination totalPages={ totalPages }/>
+      {/* <Pagination totalPages={ totalPages }/> */}
       
     </>
   );

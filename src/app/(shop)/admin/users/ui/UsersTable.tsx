@@ -2,16 +2,24 @@
 
 import { changeUserRole } from '@/actions';
 import type { User } from '@/interfaces';
+import { UserColumns, columns } from './columns';
+import { DataTable } from './data-table';
 
 interface Props {
   users: User[];
+  data: UserColumns[];
 }
 
-export const UsersTable = ({ users }: Props) => {
+export const UsersTable = ({ users, data }: Props) => {
 
 
   return (
-    <table className="min-w-full">
+    <>
+
+    <DataTable columns={columns} data={data}/>
+    
+    
+    {/* <table className="min-w-full">
       <thead className="bg-gray-200 border-b">
         <tr>
           <th
@@ -62,6 +70,7 @@ export const UsersTable = ({ users }: Props) => {
           </tr>
         ))}
       </tbody>
-    </table>
+    </table> */}
+    </>
   );
 };

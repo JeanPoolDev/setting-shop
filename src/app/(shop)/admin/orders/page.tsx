@@ -2,11 +2,14 @@ export const revalidate = 0;
 
 // https://tailwindcomponents.com/component/hoverable-table
 import {  getPaginatedOrders } from "@/actions";
-import { Pagination, Title } from "@/components";
+import { Title } from "@/components";
+import { Separator } from "@/components/ui/separator";
 
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { IoCardOutline } from "react-icons/io5";
+import { DataTable } from "./data-table";
+import { allOrdersColumns, columns } from "./columns";
 
 export default async function OrdersPage() {
 
@@ -16,11 +19,24 @@ export default async function OrdersPage() {
     redirect("/auth/login");
   }
 
+  const formattedAllOrders: allOrdersColumns[] = orders.map((item) => ({
+    id: item.id,
+    nombre: item.OrderAddress?.firstName,
+    apellido: item.OrderAddress?.lastName,
+    estado: item.isPaid ? 'Pagado' : 'NoPagado',
+  }))
+
   return (
     <>
       <Title title="Todas las orders" />
 
-      <div className="mb-10">
+      <Separator />
+
+      <DataTable columns={columns} data={formattedAllOrders}/>
+
+      <div className="mb-10"/> 
+
+      {/* <div className="mb-10">
         <table className="min-w-full">
           <thead className="bg-gray-200 border-b">
             <tr>
@@ -36,12 +52,6 @@ export default async function OrdersPage() {
               >
                 Nombre completo
               </th>
-              {/* <th
-                scope="col"
-                className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-              >
-                Orden Creada
-              </th> */}
               <th
                 scope="col"
                 className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
@@ -68,9 +78,6 @@ export default async function OrdersPage() {
                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                   {order.OrderAddress?.firstName} {order.OrderAddress?.lastName}
                 </td>
-                {/* <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                  {`${order.updatedAt}`}
-                </td> */}
                 <td className="flex items-center text-sm  text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                   {order.isPaid ? (
                     <>
@@ -95,9 +102,7 @@ export default async function OrdersPage() {
             
           </tbody>
         </table>
-
-        <Pagination totalPages={ 1 } />
-      </div>
+      </div> */}
     </>
   );
 }

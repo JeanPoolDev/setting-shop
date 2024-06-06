@@ -1,5 +1,7 @@
 import { auth } from "@/auth.config";
 import { Title } from "@/components";
+import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 import { redirect } from "next/navigation";
 
 export default async function ProfilePage() {
@@ -12,11 +14,44 @@ export default async function ProfilePage() {
 
   return (
     <div>
-      <Title title="Perfil" />
+      <div className="min-h-screen mt-5 mb-5 bg-gray-100 flex flex-col items-center justify-center">
+      <div className="bg-white shadow-md rounded-lg p-6 w-11/12 md:w-2/3 lg:w-1/2">
+        <Title title="Perfil" />
+        <Separator />
+        <div className="flex flex-col items-center mt-4">
+          <div className="mb-4">
+            {session.user.image ? (
+              <Image
+                className="rounded-full"
+                src={session.user.image}
+                alt={`${session.user.name}'s profile picture`}
+                width={150}
+                height={150}
+              />
+              
+            ) : (
+              <div className="bg-gray-200 h-32 w-32 rounded-full flex items-center justify-center">
+                <span className="text-gray-500">Sin Imagen</span>
+              </div>
+            )}
+          </div>
+          <div className="text-center mb-5">
+            <p className="text-xl font-semibold">{session.user.name}</p>
+            <p className="text-gray-600">{session.user.email}</p>
+          </div>     
+        </div>
+        <Separator />
+        <p className="text-1xl">Rol:</p>
+            <p className="text-2xl mt-4 mb-5 flex flex-col items-center font-bold">
+              { 
+                session.user.role === 'admin'
+                ? 'Administrador'
+                : 'Usuario'
+              }
+            </p> 
+      </div>
+    </div>
 
-      <pre>{JSON.stringify(session.user, null, 2)}</pre>
-
-      <h3 className="text-3xl mb-10">{ session.user.role  }</h3>
     </div>
   );
 }
