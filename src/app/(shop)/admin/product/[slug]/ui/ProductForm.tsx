@@ -9,7 +9,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { sleep } from "@/utils";
 
 interface Props {
-  product: Partial<Product> & { ProductImage?: ProductWithImage[] };
+  product: Partial<Product> & { productoImagen?: ProductWithImage[] };
   categories: Category[];
 }
 
@@ -200,7 +200,7 @@ export const ProductForm = ({ product, categories }: Props) => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {product.ProductImage?.map((image) => (
+            {product.productoImagen?.map((image) => (
               <div key={image.id}>
                 <ProductImage
                   alt={product.title ?? ""}
