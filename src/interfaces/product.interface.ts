@@ -26,5 +26,5 @@ export interface ProductImage {
   productId: string;
 }
 
-type Category = 'teclado'|'audifono'|'memoria'|'monitor'
+type Category = 'teclado'|'audifono'|'memoria'|'monitor'|'mouse'|'laptop'|'tarjetaVideo'|'impresora'|'cases'|'fuentePoder'|'memoriaRam'|'procesador'|'placaBase'|'otros'
 export type Type = 'teros'|'logitech'|'reddragon'|'halion';

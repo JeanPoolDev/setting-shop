@@ -6,6 +6,8 @@ import { titleFont } from "@/config/fonts";
 import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 import { useCartStore, useUIStore } from "@/store";
 import { useEffect, useState } from "react";
+import { ModeToggle } from "../theme/page";
+import { NavigationMenuDemo } from "./nav-bar";
 
 const TopMenu = () => {
 
@@ -34,24 +36,19 @@ const TopMenu = () => {
       </div>
 
       {/* Center Menu */ }
-      <div className="hidden sm:block">
-
-        <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" 
-        href="/gender/teclado">Teclados</Link>
-        <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" 
-        href="/gender/audifono">Audifonos</Link>
-        <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" 
-        href="/gender/memoria">Memoria</Link>
-
+      <div className="hidden sm:block text-center">
+        <NavigationMenuDemo />
       </div>
 
 
       {/* Search, Cart, Menu */ }
-      <div className="flex items-center">
+      <div className="flex items-center gap-1">
 
         {/* <Link href="/search" className="mx-2">
           <IoSearchOutline className="w-5 h-5" />
         </Link> */}
+
+        <ModeToggle />
 
         <Link href={
           ((totalItemsInCart === 0) && loaded)

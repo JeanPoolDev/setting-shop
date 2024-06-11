@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { inter } from '@/config/fonts';
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 import "./globals.css";
 import { Providers } from "@/components";
@@ -21,7 +22,14 @@ export default function RootLayout({
     <html lang="es">
       <body className={inter.className}>
         <Providers>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
           {children}
+          </ThemeProvider>
         </Providers>
       </body>
     </html>

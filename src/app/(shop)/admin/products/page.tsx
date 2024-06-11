@@ -12,6 +12,7 @@ import { redirect } from "next/navigation";
 import { IoCardOutline } from "react-icons/io5";
 import { ProductsColums, columns } from "./columns";
 import { DataTable } from "./data-table";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   searchParams: {
@@ -38,10 +39,12 @@ export default async function OrdersPage({ searchParams }: Props) {
     <>
       <Title title="Mantenimiento de productos" />
 
-      <div className="flex justify-end mb-5">
-        <Link href="/admin/product/new" className="btn-primary">
-          Nuevo producto
-        </Link>
+      <div className="flex justify-end">
+        <Button className="mb-5">
+          <Link href="/admin/product/new">
+            Nuevo producto
+          </Link>
+        </Button>
       </div>
 
       <Separator/>

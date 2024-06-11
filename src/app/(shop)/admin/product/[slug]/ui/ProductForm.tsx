@@ -5,7 +5,6 @@ import { Category, Product, ProductImage as ProductWithImage } from "@/interface
 import { createUpdateProduct, deleteProductImage } from "@/actions";
 import { useRouter } from 'next/navigation';
 import { ProductImage } from '@/components';
-import toast, { Toaster } from 'react-hot-toast';
 import { sleep } from "@/utils";
 
 interface Props {
@@ -20,7 +19,7 @@ interface FormInputs {
   price: number;
   inStock: number;
   tags: string;
-  gender: 'teclado'|'audifono'|'memoria'|'monitor';
+  gender: 'teclado'|'audifono'|'memoria'|'monitor'|'mouse'|'laptop'|'tarjetaVideo'|'impresora'|'cases'|'fuentePoder'|'memoriaRam'|'procesador'|'placaBase'|'otros'
   categoryId: string;
 
   images?: FileList;
@@ -75,7 +74,7 @@ export const ProductForm = ({ product, categories }: Props) => {
     const { ok, product:updatedProduct } = await createUpdateProduct(formData);
 
     if ( !ok ) {
-      toast.error('Producto no se pudo actualizar');
+      alert('Producto no se pudo actualizar');
       return;
     }
 
@@ -148,11 +147,21 @@ export const ProductForm = ({ product, categories }: Props) => {
             <option value="audifono">Audifono</option>
             <option value="memoria">Memoria</option>
             <option value="monitor">Monitor</option>
+            <option value="mouse">Mouse</option>
+            <option value="laptop">Laptop</option>
+            <option value="tarjetaVideo">TarjetaVideo</option>
+            <option value="impresora">Impresora</option>
+            <option value="cases">Cases</option>
+            <option value="fuentePoder">Fuente de Poder</option>
+            <option value="memoriaRam">Memoria Ram</option>
+            <option value="procesador">Procesador</option>
+            <option value="placaBase">Placa Base</option>
+            <option value="otros">otros</option>
           </select>
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Categoria</span>
+          <span>Marca</span>
           <select
             className="p-2 border rounded-md bg-gray-200"
             {...register("categoryId", { required: true })}
@@ -169,7 +178,6 @@ export const ProductForm = ({ product, categories }: Props) => {
         <button 
           className="btn-primary w-full"
         >
-          <Toaster position="top-center"/>
           Guardar
         </button>
       </div>

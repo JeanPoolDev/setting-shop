@@ -12,6 +12,16 @@ enum Gender {
   audifono
   memoria
   monitor
+  mouse
+  laptop
+  tarjetaVideo
+  impresora
+  cases
+  fuentePoder
+  memoriaRam
+  procesador
+  placaBase
+  otros
 }
 
 enum Role {

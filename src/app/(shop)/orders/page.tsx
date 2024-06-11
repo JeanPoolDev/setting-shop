@@ -27,6 +27,7 @@ export default async function OrdersPage() {
     estaPagado: item.isPaid ? 'Pagado' : 'No Pagado'
   }))
 
+
   return (
     <>
       <Title title="Ordenes" />

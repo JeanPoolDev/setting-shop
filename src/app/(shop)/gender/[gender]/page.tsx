@@ -33,13 +33,19 @@ export default async function GenderByPage({ params, searchParams }: Props) {
   const labels: Record<string, string> = {
     'teclado': 'Teclados',
     'audifono': 'Audifonos',
-    'memoria': 'Mouses',
-    'monitor': 'Monitores'
+    'memoria': 'Memorias',
+    'monitor': 'Monitores',
+    'mouse': 'Mouse',
+    'laptop': 'Laptop',
+    'tarjetaVideo': 'Tarjetas de Video',
+    'impresora': 'Impresoras',
+    'cases': 'Cases',
+    'fuentePoder': 'Fuente de Poder',
+    'memoriaRam': 'Memorias Ram',
+    'procesador': 'Procesadores',
+    'placaBase': 'Placas Base',
+    'otros': 'Otros',
   }
-
-  // if( id === 'audifonos' ){
-  //   notFound();
-  // }
 
   return (
     <>

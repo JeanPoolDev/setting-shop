@@ -16,6 +16,7 @@ import {
 import Link from "next/link"
 import { orderColumns } from "@tanstack/react-table";
 import { useRouter } from "next/navigation";
+import { deleteOrder } from "@/actions";
 
 interface CellActionsProps {
   data: OrdenesColumns;
@@ -30,6 +31,17 @@ const CellActions: React.FC<CellActionsProps> = ({
   const redirection = () => {
     router.push(`/orders/${ data.id }`)
   }
+
+  const handleDelete = async () => {
+    const response = await deleteOrder(data.id!);
+    if (response.ok) {
+      alert(response.message);
+      router.refresh(); 
+    } else {
+      alert(response.message);
+    }
+  };
+
 
   return ( 
     <div>
@@ -48,6 +60,7 @@ const CellActions: React.FC<CellActionsProps> = ({
               Ver Orden
             </DropdownMenuItem>
             <DropdownMenuItem
+            onClick={handleDelete}
             >
               Eliminar Orden
             </DropdownMenuItem>

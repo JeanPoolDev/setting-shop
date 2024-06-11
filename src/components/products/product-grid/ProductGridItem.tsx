@@ -17,26 +17,30 @@ export const ProductGridItem = ( { product }: Props ) => {
 
 
   return (
-    <div className="rounded-md overflow-hidden fade-in">
+    <div className="bg-white group cursor-pointer rounded-xl border-4 p-3 space-y-4 overflow-hidden fade-in">
       <Link href={ `/product/${ product.slug }` }>
+        <div className='aspect-square rounded-xl bg-gray-100 relative'>
         <ProductImage
           src={ displayImage }
           alt={ product.title }
-          className="w-full object-cover rounded"
+          className="aspect-square object-cover rounded-md"
           width={ 500 }
           height={ 500 }
           onMouseEnter={ () => setDisplayImage( product.images[1] )  }
           onMouseLeave={ () => setDisplayImage( product.images[0] ) }
         />
+        </div>
       </Link>
 
       <div className="p-4 flex flex-col">
         <Link
-          className="hover:text-blue-600"
+          className="font-semibold text-lg"
           href={ `/product/${ product.slug }` }>
           { product.title }
         </Link>
-        <span className="font-bold">S/.{ product.price }</span>
+        <span className="flex items-center">
+          S/.{ product.price }
+        </span>
       </div>
 
     </div>

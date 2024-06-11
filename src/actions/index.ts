@@ -26,3 +26,4 @@ export { getCategories } from './category/get-categories';
 export { deleteProductImage } from './product/delete-product-image';
 
 export { createUpdateProduct } from './product/create-update-product';
+export { deleteOrder } from './order/delete-order';

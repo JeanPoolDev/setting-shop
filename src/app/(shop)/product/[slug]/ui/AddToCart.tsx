@@ -5,6 +5,7 @@ import { useState } from "react";
 import { QuantitySelector } from "@/components";
 import type { CartProduct, Product} from "@/interfaces";
 import { useCartStore } from '@/store';
+import { Button } from "@/components/ui/button";
 
 interface Props {
   product: Product;
@@ -41,9 +42,9 @@ export const AddToCart = ({ product }: Props) => {
       <QuantitySelector quantity={quantity} onQuantityChanged={setQuantity} />
 
       {/* Button */}
-      <button onClick={addToCart} className="btn-primary my-5">
-        Agregar al carrito
-      </button>
+      <Button onClick={addToCart} className="my-5">
+        Agregar al Carrito
+      </Button>
     </>
   );
 };
