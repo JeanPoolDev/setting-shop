@@ -55,11 +55,11 @@ export const ProductSlideshow = ( { images, title, className }: Props ) => {
           images.map( image => (
             <SwiperSlide key={ image }>
               <ProductImage
-                width={ 1024 }
-                height={ 800 }
+                width={ 1084 }
+                height={ 1084 }
                 src={ image }
                 alt={ title }
-                className="rounded-lg object-fill"
+                className="rounded-lg border-2 object-cover object-center "
               />
             </SwiperSlide>
 
@@ -81,11 +81,11 @@ export const ProductSlideshow = ( { images, title, className }: Props ) => {
           images.map( image => (
             <SwiperSlide key={ image }>
               <ProductImage
-                width={ 300 }
-                height={ 300 }
+                width={ 500 }
+                height={ 500 }
                 src={ image }
                 alt={ title }
-                className="rounded-lg object-fill"
+                className="rounded-lg object-cover border-2 object-center"
               />
             </SwiperSlide>
 

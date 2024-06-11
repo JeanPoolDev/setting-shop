@@ -51,35 +51,35 @@ const components: { title: string; href: string; description: string }[] = [
     title: "Placa Base",
     href: "/gender/placaBase",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Las mejores placas base de marcas como ASUS, Gigabyte y MSI.",
   },
   {
     title: "Memoria",
     href: "/gender/memoria",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Memorias de alta velocidad y capacidad de marcas como Samsung y Crucial.",
   },
   {
     title: "Tarjeta de Video",
     href: "/gender/tarjetaVideo",
-    description: "Visually or semantically separates content.",
+    description: "Tarjetas gráficas de alto rendimiento de NVIDIA y AMD.",
   },
   {
     title: "Fuente de Poder",
     href: "/gender/fuentePoder",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Fuentes de poder eficientes y confiables de Corsair y EVGA.",
   },
   {
     title: "Procesador",
     href: "/gender/procesador",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Procesadores potentes de Intel y AMD.",
   },
   {
     title: "Memoria Ram",
     href: "/gender/memoriaRam",
-    description: "Visually or semantically separates content.",
+    description: "Memorias RAM rápidas y estables de Kingston y G.Skill.",
   },
 ]
 
@@ -88,37 +88,37 @@ const componentsDos: { title: string; href: string; description: string }[] = [
     title: "Laptops",
     href: "/gender/laptop",
     description:
-      "Los Mejores Teclados del Mundo en un solo lugar.",
+      "Encuentra las mejores laptops del mercado",
   },
   {
     title: "Teclados",
     href: "/gender/teclado",
     description:
-      "Los Mejores Teclados del Mundo en un solo lugar.",
+      "Los Mejores Teclados del Mundo en un solo lugar",
   },
   {
     title: "Audifonos",
     href: "/gender/audifono",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Descubre una amplia gama de audífonos de alta calidad ",
   },
   {
     title: "Mouse",
     href: "/gender/mouse",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Explora nuestra selección de mouse ergonómicos y de alto rendimiento",
   },
   {
     title: "Cases",
     href: "/gender/cases",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Protege tus dispositivos con los mejores cases",
   },
   {
     title: "Otros",
     href: "/gender/otros",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Encuentra otros accesorios y periféricos tecnológicos ",
   },
 ]
 
@@ -147,10 +147,10 @@ export function NavigationMenuDemo() {
                 </NavigationMenuLink>
               </li>
               <ListItem href="/gender/monitor" title="Monitor">
-                Re-usable components built using Radix UI and Tailwind CSS.
+                Monitores de alta definición y calidad.
               </ListItem>
               <ListItem href="/gender/impresora" title="Impresora">
-                How to install dependencies and structure your app.
+                Impresoras eficientes y multifuncionaless.
               </ListItem>
             </ul>
           </NavigationMenuContent>

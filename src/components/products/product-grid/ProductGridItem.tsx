@@ -17,7 +17,7 @@ export const ProductGridItem = ( { product }: Props ) => {
 
 
   return (
-    <div className="bg-white group cursor-pointer rounded-xl border-4 p-3 space-y-4 overflow-hidden fade-in">
+    <div className="bg-white group cursor-pointer rounded-xl border-2 p-3 space-y-4 overflow-hidden fade-in border-black">
       <Link href={ `/product/${ product.slug }` }>
         <div className='aspect-square rounded-xl bg-gray-100 relative'>
         <ProductImage

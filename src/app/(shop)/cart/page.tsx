@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Title } from '@/components';
 import { ProductsInCart } from './ui/ProductsInCart';
 import { OrderSummary } from './ui/OrderSummary';
+import { Button } from '@/components/ui/button';
 
 
 export default function CardPage() {
@@ -45,14 +46,21 @@ export default function CardPage() {
 
             <OrderSummary />
             
-            <div className="mt-5 mb-2 w-full">
+            {/* <div className="mt-5 mb-2 w-full">
               <Link 
                 className="flex btn-primary justify-center"
                 href="/checkout/address">
                 Checkout
               </Link>
-            </div>
+            </div> */}
 
+            <Button className='w-full mt-4'>
+              <Link 
+                className="flex justify-center"
+                href="/checkout/address">
+                Verificar Compra
+              </Link>
+            </Button>
 
           </div>
 
