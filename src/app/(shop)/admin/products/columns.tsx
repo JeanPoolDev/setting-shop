@@ -2,10 +2,8 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 import CellImagenActions from "./cellImagenActions"
-import CellTitutoActions from "./cellTitutloActions"
+import CellActions from "./cellActions"
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
 export type ProductsColums = {
   Imagen: string
   Titulo: string
@@ -24,7 +22,6 @@ export const columns: ColumnDef<ProductsColums>[] = [
   {
     accessorKey: "Titulo",
     header: "Titulo",
-    cell: ({ row }) => <CellTitutoActions data={row.original}/>
   },
   {
     accessorKey: "Precio",
@@ -47,4 +44,9 @@ export const columns: ColumnDef<ProductsColums>[] = [
     accessorKey: "Inventario",
     header: "Inventario",
   },
+  {
+    header:'Acciones',
+    id: "actions",
+    cell: ({ row }) => <CellActions data={row.original}/>
+  }
 ]
