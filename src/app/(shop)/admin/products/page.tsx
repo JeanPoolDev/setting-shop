@@ -27,6 +27,7 @@ export default async function OrdersPage({ searchParams }: Props) {
     await getPaginatedProductsWithImages({  });
 
   const formattedProducts: ProductsColums[] = products.map((item) => ({
+    id: item.id,
     Imagen: item.productoImagen[0]?.url,
     Titulo: item.title,
     Precio: item.price,

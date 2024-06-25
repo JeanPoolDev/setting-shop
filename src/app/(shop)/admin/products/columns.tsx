@@ -5,6 +5,7 @@ import CellImagenActions from "./cellImagenActions"
 import CellActions from "./cellActions"
 
 export type ProductsColums = {
+  id: string;
   Imagen: string
   Titulo: string
   Precio: number
