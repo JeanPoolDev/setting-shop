@@ -41,7 +41,7 @@ export default function CardPage() {
 
 
           {/* Checkout - Resumen de orden */ }
-          <div className="bg-white rounded-xl shadow-xl p-7 h-fit">
+          <div className="bg-white rounded-xl shadow-lg p-7 h-fit dark:bg-zinc-900 dark:shadow-white">
             <h2 className="text-2xl mb-2">Resumen de orden</h2>  
 
             <OrderSummary />

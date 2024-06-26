@@ -14,8 +14,8 @@ export default async function ProfilePage() {
 
   return (
     <div>
-      <div className="min-h-screen mt-5 mb-5 bg-gray-100 flex flex-col items-center justify-center">
-      <div className="bg-white shadow-md rounded-lg p-6 w-11/12 md:w-2/3 lg:w-1/2">
+      <div className="min-h-screen mt-5 mb-5 bg-gray-100 flex flex-col items-center justify-center dark:bg-zinc-800">
+      <div className="bg-white shadow-md rounded-lg p-6 w-11/12 md:w-2/3 lg:w-1/2 dark:bg-zinc-900">
         <Title title="Perfil" />
         <Separator />
         <div className="flex flex-col items-center mt-4">
@@ -30,8 +30,8 @@ export default async function ProfilePage() {
               />
               
             ) : (
-              <div className="bg-gray-200 h-32 w-32 rounded-full flex items-center justify-center">
-                <span className="text-gray-500">Sin Imagen</span>
+              <div className="bg-gray-200 h-32 w-32 rounded-full flex items-center justify-center dark:bg-zinc-700">
+                <span className="text-gray-500 dark:text-white">Sin Imagen</span>
               </div>
             )}
           </div>
@@ -40,15 +40,6 @@ export default async function ProfilePage() {
             <p className="text-gray-600">{session.user.email}</p>
           </div>     
         </div>
-        <Separator />
-        <p className="text-1xl">Rol:</p>
-            <p className="text-2xl mt-4 mb-5 flex flex-col items-center font-bold">
-              { 
-                session.user.role === 'admin'
-                ? 'Administrador'
-                : 'Usuario'
-              }
-            </p> 
       </div>
     </div>
 

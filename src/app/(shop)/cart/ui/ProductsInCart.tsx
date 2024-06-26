@@ -30,7 +30,7 @@ export const ProductsInCart = () => {
   return (
     <>
       {productsInCart.map((product) => (
-        <div key={ `${ product.slug }`  } className="flex p-3 border-2 justify-between rounded-xl">
+        <div key={ `${ product.slug }`  } className="flex p-3 border-2 justify-between rounded-xl dark:bg-zinc-900 dark:border-white">
           <ProductImage
             src={product.image }
             width={100}

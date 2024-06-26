@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import { placeOrder } from '@/actions';
 import { useAddressStore, useCartStore } from "@/store";
 import { currencyFormat } from '@/utils';
+import { Button } from "@/components/ui/button";
 
 export const PlaceOrder = () => {
 
@@ -63,7 +64,7 @@ export const PlaceOrder = () => {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-xl p-7">
+    <div className="bg-white rounded-xl shadow-lg p-7 dark:bg-black dark:shadow-white">
       <h2 className="text-2xl mb-2">Dirección de entrega</h2>
       <div className="mb-10">
         <p className="text-xl">
@@ -119,7 +120,7 @@ export const PlaceOrder = () => {
 
         <p className="text-red-500">{ errorMessage }</p>
 
-        <button
+        {/* <button
           // href="/orders/123"
           onClick={ onPlaceOrder }
           className={
@@ -130,7 +131,13 @@ export const PlaceOrder = () => {
           }
         >
           Colocar orden
-        </button>
+        </button> */}
+
+        <Button
+          onClick={ onPlaceOrder }
+        >
+          Colocar orden
+        </Button>
       </div>
     </div>
   );

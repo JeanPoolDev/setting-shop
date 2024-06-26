@@ -8,6 +8,7 @@ import { useCartStore, useUIStore } from "@/store";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "../theme/page";
 import { NavigationMenuDemo } from "./nav-bar";
+import { Button } from "../button";
 
 const TopMenu = () => {
 
@@ -65,11 +66,12 @@ const TopMenu = () => {
           </div>
         </Link>
 
-        <button
-          onClick={ openSideMenu }
-          className="m-2 p-2 rounded-md transition-all hover:bg-gray-100">
-          Menú
-        </button>
+        <Button
+        onClick={ openSideMenu }
+        variant="outline"
+        className="m-2 p-2 rounded-md transition-all">
+        Menú
+        </Button>
 
       </div>
 
