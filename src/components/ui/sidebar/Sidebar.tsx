@@ -36,7 +36,7 @@ export const Sidebar = () => {
       {
         isSideMenuOpen && (
           <div
-            className="fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30"
+            className="fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30 dark:bg-white"
           />
 
         )
@@ -58,7 +58,7 @@ export const Sidebar = () => {
       <nav
         className={
           clsx(
-            "fixed p-5 right-0 top-0 w-[400px] h-screen bg-white z-20 shadow-2xl transform transition-all duration-300",
+            "fixed p-5 right-0 top-0 w-[400px] h-screen bg-white z-20 shadow-2xl transform transition-all duration-300 dark:bg-black",
             {
               "translate-x-full": !isSideMenuOpen
             }
@@ -92,7 +92,7 @@ export const Sidebar = () => {
               <Link
                 href="/profile"
                 onClick={() => closeMenu() }
-                className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all"
+                className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all dark:hover:text-black"
                 >
                   <IoPersonOutline size={ 25 } />
                   <span className="ml-3 text-lg">Perfil</span>
@@ -101,7 +101,7 @@ export const Sidebar = () => {
               <Link
                 href="/orders"
                 onClick={() => closeMenu()}
-                className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all"
+                className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all dark:hover:text-black"
               >
                 <IoTicketOutline size={ 25 } />
                 <span className="ml-3 text-lg">Ordenes</span>
@@ -112,7 +112,7 @@ export const Sidebar = () => {
 
         {isAuthenticated && (
           <button
-            className="flex w-full items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+            className="flex w-full items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all dark:hover:text-black"
             onClick={() => onLogout()}
           >
             <IoLogOutOutline size={25} />
@@ -123,7 +123,7 @@ export const Sidebar = () => {
         {!isAuthenticated && (
           <Link
             href="/auth/login"
-            className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+            className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all dark:hover:text-black"
             onClick={() => closeMenu()}
           >
             <IoLogInOutline size={25} />
@@ -143,7 +143,7 @@ export const Sidebar = () => {
               <Link
                 href="/admin/products"
                 onClick={() => closeMenu()}
-                className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all"
+                className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all dark:hover:text-black"
               >
                 <IoShirtOutline size={ 25 } />
                 <span className="ml-3 text-lg">Productos</span>
@@ -152,7 +152,7 @@ export const Sidebar = () => {
               <Link
                 href="/admin/orders"
                 onClick={() => closeMenu()}
-                className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all"
+                className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all dark:hover:text-black" 
               >
                 <IoTicketOutline size={ 25 } />
                 <span className="ml-3 text-lg">Ordenes</span>
@@ -161,7 +161,7 @@ export const Sidebar = () => {
               <Link
                 href="/admin/users"
                 onClick={() => closeMenu()}
-                className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all"
+                className="flex items-center mt-5 p-2 hover:bg-gray-100 rounded transition-all dark:hover:text-black"
               >
                 <IoPeopleOutline size={ 25 } />
                 <span className="ml-3 text-lg">Usuarios</span>
