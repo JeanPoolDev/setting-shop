@@ -31,14 +31,14 @@ export const LoginForm = () => {
     <form action={dispatch} className="flex flex-col">
       <label htmlFor="email">Correo electrónico</label>
       <input
-        className="px-5 py-2 border bg-gray-200 rounded mb-5"
+        className="px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black"
         type="email"
         name="email"
       />
 
       <label htmlFor="email">Contraseña</label>
       <input
-        className="px-5 py-2 border bg-gray-200 rounded mb-5"
+        className="px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black"
         type="password"
         name="password"
       />
@@ -66,7 +66,7 @@ export const LoginForm = () => {
       {/* divisor l ine */}
       <div className="flex items-center my-5">
         <div className="flex-1 border-t border-gray-500"></div>
-        <div className="px-2 text-gray-800">O</div>
+        <div className="px-2 text-gray-800 dark:text-white">O</div>
         <div className="flex-1 border-t border-gray-500"></div>
       </div>
 

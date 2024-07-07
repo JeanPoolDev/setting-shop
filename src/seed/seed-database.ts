@@ -72,10 +72,6 @@ async function main(){
 
   })
  
-
-
-
-
   console.log('seed Execute Success');
 }
 

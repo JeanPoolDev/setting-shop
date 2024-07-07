@@ -43,18 +43,18 @@ export const RegisterForm = () => {
   return (
     <form onSubmit={ handleSubmit( onSubmit ) }  className="flex flex-col">
 
-      {/* {
+      {
         errors.name?.type === 'required' && (
           <span className="text-red-500">* El nombre es obligatorio</span>
         )
-      } */}
+      }
 
 
       <label htmlFor="email">Nombre completo</label>
       <input
         className={
           clsx(
-            "px-5 py-2 border bg-gray-200 rounded mb-5",
+            "px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black",
             {
               'border-red-500': errors.name
             }
@@ -69,7 +69,7 @@ export const RegisterForm = () => {
       <input
         className={
           clsx(
-            "px-5 py-2 border bg-gray-200 rounded mb-5",
+            "px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black",
             {
               'border-red-500': errors.email
             }
@@ -83,7 +83,7 @@ export const RegisterForm = () => {
       <input
         className={
           clsx(
-            "px-5 py-2 border bg-gray-200 rounded mb-5",
+            "px-5 py-2 border bg-gray-200 rounded mb-5 dark:text-black",
             {
               'border-red-500': errors.password
             }
@@ -94,7 +94,7 @@ export const RegisterForm = () => {
       />
 
       
-        <span className="text-red-500">{ errorMessage } </span>
+      <span className="text-red-500">{ errorMessage }La contraseña debe tener min 6</span>
         
       
 

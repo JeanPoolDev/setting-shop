@@ -27,4 +27,6 @@ export interface ProductImage {
 }
 
 type Category = 'teclado'|'audifono'|'memoria'|'monitor'|'mouse'|'laptop'|'tarjetaVideo'|'impresora'|'cases'|'fuentePoder'|'memoriaRam'|'procesador'|'placaBase'|'otros'
-export type Type = 'teros'|'logitech'|'reddragon'|'halion';
+export type Type = 'teros'|'logitech'|'reddragon'|'halion'|'corsair'|'hyperx'|'gigabyte'|'asus'|'msi'|'intel'|'amd'|'enkore'|'samsung'|'noc'|'kingston'|'tforce'|'teamgroup'|'hp'|
+'lenovo'|'epson'|'cannon'|'brother'|'micronics'|'western digital'|'seagate'|
+'toshiba'|'cable';

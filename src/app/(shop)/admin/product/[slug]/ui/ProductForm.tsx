@@ -95,16 +95,16 @@ export const ProductForm = ({ product, categories }: Props) => {
           <span>Título</span>
           <input
             type="text"
-            className="p-2 border rounded-md bg-gray-200"
+            className="p-2 border rounded-md bg-gray-200 dark:bg-gray-500"
             {...register("title", { required: true })}
           />
         </div>
 
         <div className="flex flex-col mb-2">
-          <span>Slug</span>
+          <span>Nombre de Url</span>
           <input
             type="text"
-            className="p-2 border rounded-md bg-gray-200"
+            className="p-2 border rounded-md bg-gray-200 dark:bg-gray-500"
             {...register("slug", { required: true })}
           />
         </div>
@@ -113,7 +113,7 @@ export const ProductForm = ({ product, categories }: Props) => {
           <span>Descripción</span>
           <textarea
             rows={5}
-            className="p-2 border rounded-md bg-gray-200"
+            className="p-2 border rounded-md bg-gray-200 dark:bg-gray-500"
             {...register("description", { required: true })}
           ></textarea>
         </div>
@@ -122,7 +122,7 @@ export const ProductForm = ({ product, categories }: Props) => {
           <span>Precio</span>
           <input
             type="number"
-            className="p-2 border rounded-md bg-gray-200"
+            className="p-2 border rounded-md bg-gray-200 dark:bg-gray-500"
             {...register("price", { required: true, min: 0 })}
           />
         </div>
@@ -131,7 +131,7 @@ export const ProductForm = ({ product, categories }: Props) => {
           <span>Tags</span>
           <input
             type="text"
-            className="p-2 border rounded-md bg-gray-200"
+            className="p-2 border rounded-md bg-gray-200 dark:bg-gray-500"
             {...register("tags", { required: true })}
           />
         </div>
@@ -139,7 +139,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         <div className="flex flex-col mb-2">
           <span>Categoria</span>
           <select
-            className="p-2 border rounded-md bg-gray-200"
+            className="p-2 border rounded-md bg-gray-200 dark:bg-gray-500"
             {...register("gender", { required: true })}
           >
             <option value="">[Seleccione]</option>
@@ -163,7 +163,7 @@ export const ProductForm = ({ product, categories }: Props) => {
         <div className="flex flex-col mb-2">
           <span>Marca</span>
           <select
-            className="p-2 border rounded-md bg-gray-200"
+            className="p-2 border rounded-md bg-gray-200 dark:bg-gray-500"
             {...register("categoryId", { required: true })}
           >
             <option value="">[Seleccione]</option>
@@ -188,7 +188,7 @@ export const ProductForm = ({ product, categories }: Props) => {
           <span>Inventario</span>
           <input
             type="number"
-            className="p-2 border rounded-md bg-gray-200"
+            className="p-2 border rounded-md bg-gray-200 dark:bg-gray-500"
             {...register("inStock", { required: true, min: 0 })}
           />
         </div>
@@ -202,7 +202,7 @@ export const ProductForm = ({ product, categories }: Props) => {
               type="file"
               { ...register('images') }
               multiple
-              className="p-2 border rounded-md bg-gray-200"
+              className="p-2 border rounded-md bg-gray-200 dark:bg-gray-500"
               accept="image/png, image/jpeg, image/avif"
             />
           </div>

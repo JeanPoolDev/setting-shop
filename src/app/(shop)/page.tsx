@@ -33,7 +33,8 @@ export default async function Home({ searchParams } : Props) {
         className="mb-2"
       />
 
-      <div className='max-w-7xl m-auto border border-black rounded-lg mb-5'>
+      <div className='max-w-7xl m-auto border border-black rounded-lg mb-5
+      dark:border-white'>
         <Image 
           src='/imgs/ki.png'
           alt='imagen'

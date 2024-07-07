@@ -19,7 +19,9 @@ interface SeedUser {
   role: 'admin'|'user'
 }
 
-type ValidTypes = 'teros'|'logitech'|'reddragon'|'halion';
+type ValidTypes = 'teros'|'logitech'|'reddragon'|'halion'|'corsair'|'hyperx'|'gigabyte'|'asus'|'msi'|'intel'|'amd'|'enkore'|'samsung'|'noc'|'kingston'|'tforce'|'teamgroup'|'hp'|
+'lenovo'|'epson'|'cannon'|'brother'|'micronics'|'western digital'|'seagate'|
+'toshiba'|'cable';
 
 interface SeedData {
     users: SeedUser[];
@@ -46,7 +48,10 @@ export const initialData: SeedData = {
 
 
     categories: [
-      'Teros','Logitech','Reddragon','Halion'
+      'Teros','Logitech','Reddragon','Halion','corsair','hyperx','gigabyte','asus',
+      'msi','intel','amd','enkore','samsung','noc','kingston','tforce','teamgroup','hp',
+      'lenovo','epson','cannon','brother','micronics','western digital','seagate',
+      'toshiba','cable',
     ],
 
     products: [
@@ -391,8 +396,8 @@ export const initialData: SeedData = {
         {
             description: "The Unisex 3D Large Wordmark Pullover Hoodie features soft fleece and an adjustable, jersey-lined hood for comfort and coverage. Designed in a unisex style, the pullover hoodie includes a tone-on-tone 3D silicone-printed wordmark across the chest.",
             images: [
-              '018.jpg',
-              '018.jpg',
+              '40.jpg',
+              '40.jpg',
             ],
             inStock: 15,
             price: 70,
@@ -405,8 +410,8 @@ export const initialData: SeedData = {
         {
             description: "As with the iconic Tesla logo, the Cybertruck Graffiti Hoodie is a classic in the making. Unisex style featuring soft fleece and an adjustable, jersey-lined hood for comfortable coverage.",
             images: [
-              '019.jpg',
-              '019.jpg',
+              '41.jpg',
+              '41.jpg',
             ],
             inStock: 13,
             price: 60,
@@ -419,8 +424,8 @@ export const initialData: SeedData = {
         {
             description: "The Relaxed T Logo Hat is a classic silhouette combined with modern details, featuring a 3D T logo and a custom metal buckle closure. The ultrasoft design is flexible and abrasion resistant, while the inner sweatband includes quilted padding for extra comfort and moisture wicking. The visor is fully made from recycled plastic bottles. 100% Cotton.",
             images: [
-              '020.jpg',
-              '020.jpg',
+              '42.jpg',
+              '42.jpg',
             ],
             inStock: 11,
             price: 30,
@@ -433,8 +438,8 @@ export const initialData: SeedData = {
         {
             description: "The Relaxed T Logo Hat is a classic silhouette combined with modern details, featuring a 3D T logo and a custom metal buckle closure. The ultrasoft design is flexible and abrasion resistant, while the inner sweatband includes quilted padding for extra comfort and moisture wicking. The visor is fully made from recycled plastic bottles. 100% Cotton.",
             images: [
-              '021.jpg',
-              '021.jpg',
+              '43.jpg',
+              '43.jpg',
             ],
             inStock: 13,
             price: 35,
@@ -447,8 +452,8 @@ export const initialData: SeedData = {
         {
             description: "The Women's Cropped Puffer Jacket features a uniquely cropped silhouette for the perfect, modern style while on the go during the cozy season ahead. The puffer features subtle silicone injected Tesla logos below the back collar and on the right sleeve, custom matte metal zipper pulls and a soft, fleece lined collar. Made from 87% nylon and 13% polyurethane.",
             images: [
-              '022.jpg',
-              '022.jpg',
+              '44.png',
+              '44.png',
             ],
             inStock: 85,
             price: 225,
@@ -461,8 +466,8 @@ export const initialData: SeedData = {
         {
             description: "Introducing the Tesla Chill Collection. The Women's Chill Half Zip Cropped Hoodie has a premium, soft fleece exterior and cropped silhouette for comfort in everyday lifestyle. The hoodie features an elastic hem that gathers at the waist, subtle thermoplastic polyurethane Tesla logos along the hood and on the sleeve, a double layer single seam hood and a custom ring zipper pull. Made from 60% cotton and 40% recycled polyester.",
             images: [
-              '023.jpg',
-              '023.jpg',
+              '39.jpg',
+              '39.jpg',
             ],
             inStock: 10,
             price: 130,
@@ -470,77 +475,6 @@ export const initialData: SeedData = {
             type: 'reddragon',
             tags: ['hoodie'],
             title: "Women's Chill Half Zip Cropped Hoodie",
-            gender: 'memoria'
-        },
-        {
-            description: "Introducing the Tesla Raven Collection. The Women's Raven Slouchy Crew Sweatshirt has a premium, relaxed silhouette made from a sustainable bamboo cotton blend. The slouchy crew features a subtle thermoplastic polyurethane Tesla wordmark on the left sleeve and a french terry interior for a cozy look and feel in every season. Pair it with your Raven Joggers or favorite on the go fit. Made from 70% bamboo and 30% cotton.",
-            images: [
-              '024.jpg',
-              '024.jpg',
-            ],
-            inStock: 9,
-            price: 110,
-            slug: "women_raven_slouchy_crew_sweatshirt",
-            type: 'reddragon',
-            tags: ['hoodie'],
-            title: "Women's Raven Slouchy Crew Sweatshirt",
-            gender: 'memoria'
-        },
-        {
-            description: "Introducing the Tesla Turbine Collection. Designed for style, comfort and everyday lifestyle, the Women's Turbine Cropped Long Sleeve Tee features a subtle, water-based Tesla wordmark across the chest and our T logo below the back collar. The lightweight material is double-dyed, creating a soft, casual style with a cropped silhouette. Made from 50% cotton and 50%",
-            images: [
-              '025.jpg',
-              '025.jpg',
-            ],
-            inStock: 10,
-            price: 45,
-            slug: "women_turbine_cropped_long_sleeve_tee",
-            type: 'teros',
-            tags: ['shirt'],
-            title: "Women's Turbine Cropped Long Sleeve Tee",
-            gender: 'memoria'
-        },
-        {
-            description: "ntroducing the Tesla Turbine Collection. Designed for style, comfort and everyday lifestyle, the Women's Turbine Cropped Short Sleeve Tee features a subtle, water-based Tesla wordmark across the chest and our T logo below the back collar. The lightweight material is double-dyed, creating a soft, casual style with a cropped silhouette. Made from 50% cotton and 50% polyester.",
-            images: [
-              '026.jpg',
-              '026.jpg',
-            ],
-            inStock: 0,
-            price: 40,
-            slug: "women_turbine_cropped_short_sleeve_tee",
-            type: 'teros',
-            tags: ['shirt'],
-            title: "Women's Turbine Cropped Short Sleeve Tee",
-            gender: 'memoria'
-        },
-        {
-            description: "Designed for style and comfort, the ultrasoft Women's T Logo Short Sleeve Scoop Neck Tee features a tonal 3D silicone-printed T logo on the left chest. Made of 50% Peruvian cotton and 50% Peruvian viscose.",
-            images: [
-              '027.jpg',
-              '027.jpg',
-            ],
-            inStock: 30,
-            price: 35,
-            slug: "women_t_logo_short_sleeve_scoop_neck_tee",
-            type: 'teros',
-            tags: ['shirt'],
-            title: "Women's T Logo Short Sleeve Scoop Neck Tee",
-            gender: 'memoria'
-        },
-        {
-            description: "Designed for style and comfort, the ultrasoft Women's T Logo Long Sleeve Scoop Neck Tee features a tonal 3D silicone-printed T logo on the left chest. Made of 50% Peruvian cotton and 50% Peruvian viscose.",
-            images: [
-              '028.jpg',
-              '028.jpg',
-            ],
-            inStock: 16,
-            price: 40,
-
-            slug: "women_t_logo_long_sleeve_scoop_neck_tee",
-            type: 'teros',
-            tags: ['shirt'],
-            title: "Women's T Logo Long Sleeve Scoop Neck Tee",
             gender: 'memoria'
         }
     ]
