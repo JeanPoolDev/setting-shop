@@ -3,7 +3,8 @@ export const revalidate = 60; // 60 segundos
 import { redirect } from 'next/navigation';
 
 import { getPaginatedProductsWithImages } from '@/actions';
-import { ProductGrid, Title } from '@/components';
+import { ProductGrid, ProductImage, Title } from '@/components';
+import Image from 'next/image';
 
 
 
@@ -31,6 +32,15 @@ export default async function Home({ searchParams } : Props) {
         subtitle="Todos los productos"
         className="mb-2"
       />
+
+      <div className='max-w-7xl m-auto border border-black rounded-lg mb-5'>
+        <Image 
+          src='/imgs/ki.png'
+          alt='imagen'
+          width={1400}
+          height={400}
+        />
+      </div>
 
       <ProductGrid 
         products={ products }
