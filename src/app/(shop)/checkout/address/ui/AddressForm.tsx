@@ -109,12 +109,57 @@ export const AddressForm = ({ countries, userStoredAddress = {} }: Props) => {
 
       <div className="flex flex-col mb-2">
         <span>Ciudad</span>
-        <input type="text" className="p-2 border rounded-md bg-gray-200 dark:text-black" { ...register('city', { required: true  }) } />
+        {/* <input type="text" className="p-2 border rounded-md bg-gray-200 dark:text-black" 
+         /> */}
+        <select 
+        className="p-2 border rounded-md bg-gray-200 dark:text-black"
+        { ...register('city', { required: true  }) }>
+          <option value="">[ Seleccione ]</option>
+          <option value="Lima">Lima</option>
+          <option value="Cusco">Cusco</option>
+          <option value="Arequipa">Arequipa</option>
+          <option value="Trujillo">Trujillo</option>
+          <option value="Chiclayo">Chiclayo</option>
+          <option value="Piura">Piura</option>
+          <option value="Iquitos">Iquitos</option>
+          <option value="Huancayo">Huancayo</option>
+          <option value="Puno">Puno</option>
+          <option value="Tacna">Tacna</option>
+          <option value="Juliaca">Juliaca</option>
+          <option value="Ayacucho">Ayacucho</option>
+          <option value="Cajamarca">Cajamarca</option>
+          <option value="Huaraz">Huaraz</option>
+          <option value="Ica">Ica</option>
+          <option value="Moquegua">Moquegua</option>
+          <option value="Tumbes">Tumbes</option>
+          <option value="Chimbote">Chimbote</option>
+          <option value="Tarapoto">Tarapoto</option>
+          <option value="Pucallpa">Pucallpa</option>
+          <option value="Huánuco">Huánuco</option>
+          <option value="Puerto Maldonado">Puerto Maldonado</option>
+          <option value="Chachapoyas">Chachapoyas</option>
+          <option value="Bagua">Bagua</option>
+          <option value="Sullana">Sullana</option>
+          <option value="Huaral">Huaral</option>
+          <option value="Cerro de Pasco">Cerro de Pasco</option>
+          <option value="Jaén">Jaén</option>
+          <option value="Abancay">Abancay</option>
+          <option value="Moquegua">Moquegua</option>
+          <option value="Nasca">Nasca</option>
+          <option value="Tingo María">Tingo María</option>
+          <option value="Lambayeque">Lambayeque</option>
+          <option value="Moyobamba">Moyobamba</option>
+          <option value="Yurimaguas">Yurimaguas</option>
+          <option value="Talara">Talara</option>
+          <option value="Cañete">Cañete</option>
+          <option value="Pisco">Pisco</option>
+        </select>
       </div>
 
       <div className="flex flex-col mb-2">
         <span>País</span>
-        <select className="p-2 border rounded-md bg-gray-200 dark:text-black" { ...register('country', { required: true  }) }>
+        <select className="p-2 border rounded-md bg-gray-200 dark:text-black" 
+        { ...register('country', { required: true  }) }>
           <option value="">[ Seleccione ]</option>
           {
             countries.map( country => (
@@ -126,7 +171,14 @@ export const AddressForm = ({ countries, userStoredAddress = {} }: Props) => {
 
       <div className="flex flex-col mb-2">
         <span>Teléfono</span>
-        <input type="text" className="p-2 border rounded-md bg-gray-200 dark:text-black" { ...register('phone', { required: true  }) } />
+        <input 
+          type="text" 
+          className="p-2 border rounded-md bg-gray-200 dark:text-black"
+        { ...register('phone', { 
+          required: true,
+          minLength: 9,
+          maxLength: 9,
+        }) } />
       </div>
 
       <div className="flex flex-col mb-2 sm:mt-1">
