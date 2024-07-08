@@ -1,10 +1,8 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
 
 import { cn } from "@/lib/utils"
-// import { Icons } from "@/components/icons"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -127,20 +125,22 @@ export function NavigationMenuDemo() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Bienvenido</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            Bienvenido
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-3 p-4 w-[300px] md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a 
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md items-center" 
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md items-center text-center" 
                     href="/"
                   >
-                    <StoreIcon size={50}/>
-                    <div className="mb-2 mt-4 text-lg font-medium">
+                    <StoreIcon size={50} className="w-12 h-12 md:w-16 md:h-16" />
+                    <div className="mb-2 mt-4 text-base md:text-lg font-medium">
                       SETTING
                     </div>
-                    <p className="text-sm leading-tight text-muted-foreground">
+                    <p className="text-xs md:text-sm leading-tight text-muted-foreground">
                       Una tienda en donde encontraras lo mejor en tecnología.
                     </p>
                   </a>
@@ -150,7 +150,7 @@ export function NavigationMenuDemo() {
                 Monitores de alta definición y calidad.
               </ListItem>
               <ListItem href="/gender/impresora" title="Impresora">
-                Impresoras eficientes y multifuncionaless.
+                Impresoras eficientes y multifuncionales.
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -159,7 +159,7 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Hardware</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[300px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
@@ -176,7 +176,7 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Componentes</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[300px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {componentsDos.map((component) => (
                 <ListItem
                   key={component.title}
@@ -210,8 +210,8 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm md:text-base font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-xs md:text-sm leading-snug text-muted-foreground">
             {children}
           </p>
         </a>

@@ -23,7 +23,7 @@ const TopMenu = () => {
   }, [])
 
   return (
-    <nav className="flex px-5 justify-between items-center w-full">
+    <nav className="flex px-0 md:px-3 lg:px-5 justify-between items-center w-full">
 
       {/* Logo */ }
       <div>
@@ -32,12 +32,11 @@ const TopMenu = () => {
           <span className={ `${ titleFont.className } antialiased font-bold` } >
             Setting
           </span>
-          <span> | Tienda</span>
         </Link>
       </div>
 
       {/* Center Menu */ }
-      <div className="hidden sm:block text-center">
+      <div className="text-center">
         <NavigationMenuDemo />
       </div>
 
@@ -49,7 +48,9 @@ const TopMenu = () => {
           <IoSearchOutline className="w-5 h-5" />
         </Link> */}
 
+      <div className="hidden lg:block md:block">
         <ModeToggle />
+      </div>
 
         <Link href={
           ((totalItemsInCart === 0) && loaded)

@@ -26,13 +26,13 @@ const CellUsersActions: React.FC<CellUsersProps> = ({
 
   return ( 
     <div>
-    <select 
-      value={ data.rol }
-      onChange={ e =>  changeUserRole( data.id, e.target.value) }
-      className="text-sm w-full p-2 text-gray-900">
-      <option value="admin">Admin</option>
-      <option value="user">User</option>
-    </select>
+      <select 
+        value={ data.rol }
+        onChange={ e =>  changeUserRole( data.id, e.target.value) }
+        className="text-sm w-full p-2 text-gray-900 dark:text-white">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
     </div>
    );
 }
