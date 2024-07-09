@@ -47,10 +47,6 @@ const CellAllOrders: React.FC<CellAllActionsProps> = ({
             >
               Ver Orden
             </DropdownMenuItem>
-            <DropdownMenuItem
-            >
-              Eliminar Orden
-            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
     </div>
