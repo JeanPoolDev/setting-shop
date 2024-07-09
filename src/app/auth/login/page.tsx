@@ -8,8 +8,8 @@ export default function LoginPage() {
       {/* Imagen a la izquierda */}
       <div className="md:w-1/2 relative h-1/2 md:h-full">
         <Image
-          src={'/imgs/ki.png'}
-          alt="Descripción de la imagen"
+          src={'/imgs/login.jpg'}
+          alt="Imagen de login"
           layout="fill"
           objectFit="cover"
           className="w-full h-full"

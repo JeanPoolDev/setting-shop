@@ -1133,6 +1133,90 @@ export const initialData: SeedData = {
         tags: ['ratón', 'gaming', 'RGB'],
         title: "Teros T8801",
         gender: 'mouse'
+    },
+    {
+      description: "Case de gama alta con diseño moderno, cuenta con panel lateral de vidrio templado, soporte para múltiples ventiladores y radiadores. Incluye filtros de polvo y gestión de cables integrada.",
+      images: [
+        "96.jpeg",
+        "96.jpeg"
+      ],
+      inStock: 15,
+      price: 120,
+      slug: "case-alto-rendimiento-logitech",
+      type: "logitech",
+      tags: ["Case", "Gaming", "Alto Rendimiento"],
+      title: "Case Alto Rendimiento Logitech",
+      gender: "cases"
+    },
+    {
+      description: "Case compacto y elegante ideal para setups minimalistas. Compatible con placas micro-ATX y mini-ITX, incluye ventilador trasero y espacio optimizado para gestión de cables.",
+      images: [
+        "97.jpeg",
+        "97.jpeg"
+      ],
+      inStock: 20,
+      price: 80,
+      slug: "case-compacto-logitech",
+      type: "logitech",
+      tags: ["Case", "Compacto", "Minimalista"],
+      title: "Case Compacto Logitech",
+      gender: "cases"
+    },
+    {
+      description: "Case con excelente flujo de aire, incluye tres ventiladores ARGB preinstalados y soporte para radiadores frontales y superiores. Panel frontal de malla y laterales de vidrio templado.",
+      images: [
+        "98.jpeg",
+        "98.jpeg"
+      ],
+      inStock: 10,
+      price: 140,
+      slug: "case-flujo-aire-logitech",
+      type: "logitech",
+      tags: ["Case", "Flujo de Aire", "ARGB"],
+      title: "Case Flujo de Aire Logitech",
+      gender: "cases"
+    },
+    {
+      description: "Case económico pero funcional, con espacio para hasta cuatro ventiladores y soporte para placas ATX. Incluye filtros de polvo y diseño con ventana lateral de acrílico.",
+      images: [
+        "99.jpeg",
+        "99.jpeg"
+      ],
+      inStock: 25,
+      price: 50,
+      slug: "case-economico-logitech",
+      type: "logitech",
+      tags: ["Case", "Económico", "Funcional"],
+      title: "Case Económico Logitech",
+      gender: "cases"
+    },
+    {
+      description: "Case para entusiastas del gaming, con iluminación RGB personalizable y soporte para tarjetas gráficas largas. Incluye panel lateral de vidrio templado y múltiples opciones de refrigeración.",
+      images: [
+        "100.jpeg",
+        "100.jpeg"
+      ],
+      inStock: 8,
+      price: 200,
+      slug: "case-gaming-rgb-logitech",
+      type: "logitech",
+      tags: ["Case", "Gaming", "RGB"],
+      title: "Case Gaming RGB Logitech",
+      gender: "cases"
+    },
+    {
+      description: "Case robusto de la marca Teros, con construcción en acero SPCC y paneles laterales de vidrio templado. Soporta hasta seis ventiladores y refrigeración líquida, ideal para sistemas de alto rendimiento.",
+      images: [
+        "101.jpeg",
+        "101.jpeg"
+      ],
+      inStock: 12,
+      price: 160,
+      slug: "case-alto-rendimiento-teros",
+      type: "teros",
+      tags: ["Case", "Alto Rendimiento", "Teros"],
+      title: "Case Alto Rendimiento Teros",
+      gender: "cases"
     }
   
     ]

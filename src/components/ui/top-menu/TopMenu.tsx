@@ -29,8 +29,9 @@ const TopMenu = () => {
       <div>
         <Link
           href="/">
-          <span className={ `${ titleFont.className } antialiased font-bold` } >
-            Setting
+          <span className={ `${ titleFont.className } 
+          antialiased font-bold lg:text-3xl text-orange-600` } >
+            S<span className="text-blue-600">ett<span className="text-orange-600">i</span>ng</span>
           </span>
         </Link>
       </div>
