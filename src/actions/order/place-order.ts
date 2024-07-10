@@ -23,6 +23,8 @@ export const placeOrder = async (
     };
   }
 
+  console.log("User ID:", userId);
+
   // Verificar si el usuario existe
   const userExists = await prisma.user.findUnique({ where: { id: userId } });
   if (!userExists) {
@@ -33,7 +35,6 @@ export const placeOrder = async (
   }
 
   // Obtener la información de los productos
-  // Nota: recuerden que podemos llevar 2+ productos con el mismo ID
   const products = await prisma.producto.findMany({
     where: {
       id: {
@@ -42,10 +43,8 @@ export const placeOrder = async (
     },
   });
 
-  // Calcular los montos // Encabezado
+  // Calcular los montos
   const itemsInOrder = productIds.reduce((count, p) => count + p.quantity, 0);
-
-  // Los totales de tax, subtotal, y total
   const { subTotal, tax, total } = productIds.reduce(
     (totals, item) => {
       const productQuantity = item.quantity;
@@ -67,9 +66,8 @@ export const placeOrder = async (
   // Crear la transacción de base de datos
   try {
     const prismaTx = await prisma.$transaction(async (tx) => {
-      // 1. Actualizar el stock de los productos
+      // Actualizar el stock de los productos
       const updatedProductsPromises = products.map((product) => {
-        //  Acumular los valores
         const productQuantity = productIds
           .filter((p) => p.productId === product.id)
           .reduce((acc, item) => item.quantity + acc, 0);
@@ -90,14 +88,14 @@ export const placeOrder = async (
 
       const updatedProducts = await Promise.all(updatedProductsPromises);
 
-      // Verificar valores negativos en las existencia = no hay stock
+      // Verificar valores negativos en las existencia
       updatedProducts.forEach((product) => {
         if (product.inStock < 0) {
           throw new Error(`${product.title} no tiene inventario suficiente`);
         }
       });
 
-      // 2. Crear la orden - Encabezado - Detalles
+      // Crear la orden
       const order = await tx.order.create({
         data: {
           userId: userId,
@@ -117,10 +115,7 @@ export const placeOrder = async (
         },
       });
 
-      // Validar, si el price es cero, entonces, lanzar un error
-
-      // 3. Crear la direccion de la orden
-      // Address
+      // Crear la direccion de la orden
       const { country, ...restAddress } = address;
       const orderAddress = await tx.orderAddress.create({
         data: {

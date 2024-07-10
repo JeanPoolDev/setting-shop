@@ -12,7 +12,7 @@ const ShopLayout: React.FC<ShopLayoutProps> = ({
     <main className="min-h-screen">
       <TopMenu />
       <Sidebar />
-      <div className="px-0 sm:px-10">
+      <div className="px-0 sm:px-10 pt-16">
       { children }
       </div>
       <Footer />

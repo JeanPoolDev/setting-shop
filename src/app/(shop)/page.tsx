@@ -5,6 +5,9 @@ import { redirect } from 'next/navigation';
 import { getPaginatedProductsWithImages } from '@/actions';
 import { ProductGrid, ProductImage, Title } from '@/components';
 import Image from 'next/image';
+import { Button } from '@nextui-org/react';
+import {Image as Imagen} from "@nextui-org/image";
+import { Carrusel } from '@/components/Carrusel';
 
 
 
@@ -33,15 +36,18 @@ export default async function Home({ searchParams } : Props) {
         className="mb-2"
       />
 
-      <div className='max-w-7xl lg:max-w-10xl m-auto border border-black rounded-lg mb-5
-      dark:border-white'>
-        <Image 
+      <div className='max-w-7xl lg:max-w-full xl:w-full m-auto mb-5'>
+        <Image
           src='/imgs/banner.jpg'
           alt='imagen'
+          layout='responsive'
           width={1600}
           height={200}
+          className='w-full h-auto rounded-2xl'
         />
       </div>
+
+      <Carrusel />
 
       <ProductGrid 
         products={ products }

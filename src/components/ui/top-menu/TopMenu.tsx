@@ -23,43 +23,32 @@ const TopMenu = () => {
   }, [])
 
   return (
-    <nav className="flex px-0 md:px-3 lg:px-5 justify-between items-center w-full">
-
-      {/* Logo */ }
+    <nav className="fixed top-0 left-0 right-0 flex px-0 md:px-3 lg:px-5 justify-between items-center w-full bg-white shadow-lg z-50 p-2">
+      {/* Logo */}
       <div>
-        <Link
-          href="/">
-          <span className={ `${ titleFont.className } 
-          antialiased font-bold lg:text-3xl text-orange-600` } >
+        <Link href="/">
+          <span className={`${titleFont.className} antialiased font-bold lg:text-3xl text-orange-600`}>
             S<span className="text-blue-600">ett<span className="text-orange-600">i</span>ng</span>
           </span>
         </Link>
       </div>
 
-      {/* Center Menu */ }
+      {/* Center Menu */}
       <div className="text-center">
         <NavigationMenuDemo />
       </div>
 
-
-      {/* Search, Cart, Menu */ }
+      {/* Search, Cart, Menu */}
       <div className="flex items-center gap-1">
-
         {/* <Link href="/search" className="mx-2">
           <IoSearchOutline className="w-5 h-5" />
         </Link> */}
-
-      <div className="hidden lg:block md:block">
-        <ModeToggle />
-      </div>
-
-        <Link href={
-          ((totalItemsInCart === 0) && loaded)
-          ? `/empty`
-          : "/cart"
-          } className="mx-2">
+        <div className="hidden lg:block md:block">
+          <ModeToggle />
+        </div>
+        <Link href={((totalItemsInCart === 0) && loaded) ? `/empty` : "/cart"} className="mx-2">
           <div className="relative">
-            {( loaded && totalItemsInCart > 0) && (
+            {(loaded && totalItemsInCart > 0) && (
               <span className="fade-in absolute text-xs px-1 rounded-full font-bold -top-2 -right-2 bg-blue-700 text-white">
                 {totalItemsInCart}
               </span>
@@ -67,17 +56,13 @@ const TopMenu = () => {
             <IoCartOutline className="w-5 h-5" />
           </div>
         </Link>
-
         <Button
-        onClick={ openSideMenu }
-        variant="outline"
-        className="m-2 p-2 rounded-md transition-all">
-        Menú
+          onClick={openSideMenu}
+          variant="outline"
+          className="m-2 p-2 rounded-md transition-all">
+          Menú
         </Button>
-
       </div>
-
-
     </nav>
   );
 }

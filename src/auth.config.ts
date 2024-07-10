@@ -1,5 +1,3 @@
-// auth.config.ts
-
 import NextAuth, { type NextAuthConfig } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
@@ -15,12 +13,17 @@ export const authConfig: NextAuthConfig = {
   },
 
   callbacks: {
+
+    authorized({ auth, request: { nextUrl } }) {
+      console.log({ auth });
+      return true;
+    },
+
     async signIn({ user, account, profile }) {
       if (account?.provider === 'google') {
         const existingUser = await prisma.user.findUnique({ where: { email: user.email?.toLowerCase() } });
     
         if (!existingUser) {
-          // Crear un nuevo usuario si no existe
           const newUser = await prisma.user.create({
             data: {
               name: user.name || '',
@@ -29,9 +32,10 @@ export const authConfig: NextAuthConfig = {
               password: '', // No necesitas contraseña para Google auth
             },
           });
+          user.id = newUser.id; // Asegúrate de que el ID del nuevo usuario se asigna al objeto usuario
           console.log('Usuario creado:', newUser);
-          return true;
         } else {
+          user.id = existingUser.id; // Asegúrate de que el ID del usuario existente se asigna al objeto usuario
           console.log('Usuario existente:', existingUser);
         }
       }
@@ -40,13 +44,13 @@ export const authConfig: NextAuthConfig = {
 
     async jwt({ token, user }) {
       if (user) {
-        token.data = user;
+        token.data = user; 
       }
       return token;
     },
 
     async session({ session, token }) {
-      session.user = token.data as any;
+        session.user = token.data as any;   
       return session;
     },
   },
@@ -80,3 +84,8 @@ export const authConfig: NextAuthConfig = {
 };
 
 export const { signIn, signOut, auth, handlers } = NextAuth(authConfig);
+
+  
+
+
+  

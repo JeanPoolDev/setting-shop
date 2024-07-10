@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import {Image as Imagen} from "@nextui-org/react";
 
 interface Props {
   src?: string;
@@ -9,6 +10,7 @@ interface Props {
   height: number;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  isZoomed?: boolean | undefined;
 }
 
 export const ProductImage = ({
@@ -19,7 +21,8 @@ export const ProductImage = ({
   width,
   height,
   onMouseEnter,
-  onMouseLeave 
+  onMouseLeave,
+  isZoomed 
 }: Props) => {
 
   const localSrc = ( src ) 
@@ -29,7 +32,7 @@ export const ProductImage = ({
     : '/imgs/placeholder.jpg';
 
   return (
-    <Image
+    <Imagen
       src={ localSrc }
       width={ width }
       height={ height}
@@ -38,6 +41,7 @@ export const ProductImage = ({
       style={ style }
       onMouseEnter={ onMouseEnter }
       onMouseLeave={onMouseLeave}
+      isZoomed
     />
   );
 };

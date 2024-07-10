@@ -17,7 +17,7 @@ export const ProductGridItem = ( { product }: Props ) => {
 
 
   return (
-    <div className="bg-white group cursor-pointer rounded-xl border-2 p-3 space-y-4 overflow-hidden fade-in border-black dark:bg-black dark:border-white">
+    <div className="bg-white group cursor-pointer rounded-2xl -3 space-y-4 overflow-hidden fade-in">
       <Link href={ `/product/${ product.slug }` }>
         <div className='aspect-square rounded-xl bg-gray-100 relative'>
         <ProductImage
@@ -26,8 +26,9 @@ export const ProductGridItem = ( { product }: Props ) => {
           className="aspect-square object-cover rounded-md"
           width={ 500 }
           height={ 500 }
-          onMouseEnter={ () => setDisplayImage( product.images[1] )  }
+          onMouseEnter={ () => setDisplayImage( product.images[1] ) }
           onMouseLeave={ () => setDisplayImage( product.images[0] ) }
+          isZoomed
         />
         </div>
       </Link>
