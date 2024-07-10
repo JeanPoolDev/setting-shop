@@ -1,6 +1,5 @@
 "use server";
 import prisma from "@/lib/prisma";
-
 import { auth } from "@/auth.config";
 import type { Address } from "@/interfaces";
 
@@ -21,6 +20,15 @@ export const placeOrder = async (
     return {
       ok: false,
       message: "No hay sesión de usuario",
+    };
+  }
+
+  // Verificar si el usuario existe
+  const userExists = await prisma.user.findUnique({ where: { id: userId } });
+  if (!userExists) {
+    return {
+      ok: false,
+      message: "El usuario no existe",
     };
   }
 
@@ -58,7 +66,6 @@ export const placeOrder = async (
 
   // Crear la transacción de base de datos
   try {
-
     const prismaTx = await prisma.$transaction(async (tx) => {
       // 1. Actualizar el stock de los productos
       const updatedProductsPromises = products.map((product) => {
@@ -74,7 +81,6 @@ export const placeOrder = async (
         return tx.producto.update({
           where: { id: product.id },
           data: {
-            // inStock: product.inStock - productQuantity // no hacer
             inStock: {
               decrement: productQuantity,
             },
@@ -99,15 +105,12 @@ export const placeOrder = async (
           subTotal: subTotal,
           tax: tax,
           total: total,
-
           OrderItem: {
             createMany: {
               data: productIds.map((p) => ({
                 quantity: p.quantity,
                 productId: p.productId,
-                price:
-                  products.find((product) => product.id === p.productId)
-                    ?.price ?? 0,
+                price: products.find((product) => product.id === p.productId)?.price ?? 0,
               })),
             },
           },
@@ -134,14 +137,11 @@ export const placeOrder = async (
       };
     });
 
-
     return {
       ok: true,
       order: prismaTx.order,
       prismaTx: prismaTx,
-    }
-
-
+    };
   } catch (error: any) {
     return {
       ok: false,

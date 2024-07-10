@@ -3,29 +3,19 @@
 import { useEffect } from 'react';
 import Link from "next/link";
 import { useFormState, useFormStatus } from "react-dom";
-
+import { signIn } from 'next-auth/react';
 import { authenticate } from "@/actions";
 import { IoInformationOutline } from "react-icons/io5";
 import clsx from 'clsx';
-// import { useRouter } from 'next/navigation';
 
 export const LoginForm = () => {
-
-
-  // const router = useRouter();
   const [state, dispatch] = useFormState(authenticate, undefined);
-  
 
   useEffect(() => {
-    if ( state === 'Success' ) {
-      // redireccionar
-      // router.replace('/');
+    if (state === 'Success') {
       window.location.replace('/');
     }
-
-  },[state]);
-
-
+  }, [state]);
 
   return (
     <form action={dispatch} className="flex flex-col">
@@ -58,12 +48,8 @@ export const LoginForm = () => {
         )}
       </div>
 
-        <LoginButton />
-      {/* <button type="submit" className="btn-primary">
-        Ingresar
-      </button> */}
+      <LoginButton />
 
-      {/* divisor l ine */}
       <div className="flex items-center my-5">
         <div className="flex-1 border-t border-gray-500"></div>
         <div className="px-2 text-gray-800 dark:text-white">O</div>
@@ -73,6 +59,14 @@ export const LoginForm = () => {
       <Link href="/auth/new-account" className="btn-secondary text-center">
         Crear una nueva cuenta
       </Link>
+
+      <button
+        type="button"
+        className='text-center p-2 m-2 bg-gray-500 text-white'
+        onClick={() => signIn('google')}
+      >
+        Ingresar con Google
+      </button>
     </form>
   );
 };
@@ -88,7 +82,7 @@ function LoginButton() {
         "btn-disabled": pending
       })}
       disabled={ pending }
-      >
+    >
       Ingresar
     </button>
   );
