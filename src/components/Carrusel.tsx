@@ -43,7 +43,6 @@ export const Carrusel = () => {
                     width={800}
                     height={800}
                     alt={`Image ${index + 1}`}
-                    layout="responsive"
                     objectFit="cover"
                     className='w-full h-auto rounded-2xl'
                   />

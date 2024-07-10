@@ -30,13 +30,14 @@ export default async function Home({ searchParams } : Props) {
 
   return (
     <>
-      <Title
-        title="Tienda"
-        subtitle="Todos los productos"
-        className="mb-2"
-      />
+    
+      <div>
+        <span className='font-semibold text-[90px] p-10 flex justify-center text-gray-60000'>
+          Tecnología de Vanguardia
+        </span>
+      </div>
 
-      <div className='max-w-7xl lg:max-w-full xl:w-full m-auto mb-5'>
+      <div className='max-w-7xl lg:max-w-full xl:w-full m-auto mb-5 mt-10'>    
         <Image
           src='/imgs/banner.jpg'
           alt='imagen'
@@ -47,7 +48,17 @@ export default async function Home({ searchParams } : Props) {
         />
       </div>
 
+      <Title 
+        title='Compra por Categoría'
+        className='mb-22'
+      />
+
       <Carrusel />
+
+      <Title
+        title="Todos los productos"
+        className='mb-22'
+      />
 
       <ProductGrid 
         products={ products }

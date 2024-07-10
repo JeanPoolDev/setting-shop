@@ -43,7 +43,7 @@ export const ProductsInCart = () => {
             className="mr-5 rounded"
           />
 
-          <div>
+          <div className='ml-10'>
             <span>
               {product.title} ({ product.quantity })
             </span>
