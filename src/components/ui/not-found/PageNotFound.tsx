@@ -8,14 +8,21 @@ export const PageNotFound = () => {
 
       <div className="text-center px-5 mx-5">
         <h2 className={ `${ titleFont.className } antialiased text-9xl` }>404</h2>
-        <p className="font-semibold text-xl">Whoops! José donde te metiste.</p>
+        <p className="font-semibold text-xl">Whoops! Jose donde te metiste.</p>
         <p className="font-light">
           <span>Puedes regresar al </span>
           <Link
             href='/'
-            className="font-normal hover:underline transition-all"
+            className="font-bold hover:underline transition-all text-blue-600"
           >
             inicio
+          </Link>
+          {' '}
+          <Link 
+            href="https://api.whatsapp.com/send?phone=+51973902225&text=Ayuda%20de%20Soporte"
+            className="font-bold hover:underline transition-all text-blue-600"
+          >
+            Contactanos
           </Link>
         </p>
       </div>

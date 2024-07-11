@@ -36,7 +36,7 @@ export const Sidebar = () => {
       {
         isSideMenuOpen && (
           <div
-            className="fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30 dark:bg-white"
+            className="fixed top-0 left-0 w-screen h-screen z-50 bg-black opacity-30 dark:bg-white"
           />
 
         )

@@ -1,29 +1,29 @@
 
-import { AlignTopIcon, ArrowBottomRightIcon } from '@radix-ui/react-icons';
-import { ArrowBigDown, ArrowBigUp, ArrowBigUpIcon, ArrowUp, PhoneCallIcon } from 'lucide-react';
-import Link from 'next/link';
+import {  ArrowUp, PhoneCallIcon } from 'lucide-react';
 import { Separator } from '../separator';
-import { IoLogoFacebook, IoLogoGoogle, IoLogoTiktok, IoLogoTwitter } from 'react-icons/io5';
+import { IoLogoFacebook, IoLogoTiktok, IoLogoWhatsapp } from 'react-icons/io5';
 
 
 export const Footer = () => {
   return (
     <footer className="py-16 text-center bg-gray-900 text-white h-screen flex flex-col items-center justify-center ">
         <div className="container mx-auto">
-            <div className='mb-15'>
+
+            <div className='mb-20'>
               <p className="text-gray-400 mb-4 text-xl">
-                ¿Estás listo para comprar?
+                ¿Estás listo?
               </p>
-              <h2 className="text-8xl font-bold mb-8 text-center">
-                Actualiza Ahora
+              <h2 className="text-7xl font-bold mb-8 text-center">
+                Listo Para Comprar
               </h2>
             </div>
 
             <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-16 mb-8">
 
-                <div className="text-lg font-semibold">
+                <div className="text-xl font-semibold hover:border-b-2">
                     <a href="mailto:jeanpooldev@gmail.com">
-                      jeanpooldev@gmail.com</a>
+                      jeanpooldev@gmail.com
+                    </a>
                 </div>
 
                 <div>
@@ -63,10 +63,17 @@ export const Footer = () => {
                   className='rounded-full p-4 border hover:bg-white hover:text-black'
                   >
                     <IoLogoFacebook className='h-6 w-6'/>
+                </a>
+                <a 
+                  href="https://api.whatsapp.com/send?phone=+51925077931text=Vengo%20de%20Settingweb"
+                  className='rounded-full p-4 border hover:bg-white hover:text-black'
+                  >
+                    <IoLogoWhatsapp className='h-6 w-6'/>
+                    
                 </a> 
               </div>
               <div>
-                <a href="https://api.whatsapp.com/send?phone=+51973902225&text=Ayuda%20con%20Soporte">
+                <a href="https://api.whatsapp.com/send?phone=+51973902225&text=Ayuda%20de%20Soporte">
                   Contáctanos
                 </a>
               </div>            

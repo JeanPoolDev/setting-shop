@@ -12,11 +12,11 @@ import {
 } from "@/components/ui/carousel"
 
 const misImagenes = [
-  "/products/001.jpg",
-  "/products/002.jpg",
-  "/products/003.jpg",
-  "/products/004.jpg",
-  "/products/005.jpg",
+  "/imgs/1.jpg",
+  "/imgs/2.jpg",
+  "/imgs/3.jpg",
+  "/imgs/4.jpg",
+  "/imgs/5.jpg",
 ]
 
 export const Carrusel = () => {
@@ -40,8 +40,8 @@ export const Carrusel = () => {
                 <CardContent className="flex aspect-square items-center justify-center p-6">
                   <Image
                     src={src}
-                    width={800}
-                    height={800}
+                    width={1000}
+                    height={1000}
                     alt={`Image ${index + 1}`}
                     objectFit="cover"
                     className='w-full h-auto rounded-2xl'
