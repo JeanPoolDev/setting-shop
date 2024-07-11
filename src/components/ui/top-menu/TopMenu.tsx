@@ -23,13 +23,14 @@ const TopMenu = () => {
   }, [])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 flex px-0 md:px-3 lg:px-5 justify-between items-center w-full bg-white  z-50 p-2">
+    <nav className="fixed top-0 left-0 right-0 flex px-0 md:px-3 lg:px-5 justify-between items-center w-full bg-white  z-50 p-5">
       {/* Logo */}
       <div>
         <Link href="/">
-          <span className={`${titleFont.className} antialiased font-bold lg:text-3xl text-orange-600`}>
-            S<span className="text-blue-600">ett<span className="text-orange-600">i</span>ng</span>
-          </span>
+        <span className={`${titleFont.className} antialiased font-bold text-orange-600 lg:text-4xl md:text-2xl hidden md:inline-block`}>
+          S<span className="text-blue-600">ett<span className="text-orange-600">i</span>ng</span>
+        </span>
+
         </Link>
       </div>
 

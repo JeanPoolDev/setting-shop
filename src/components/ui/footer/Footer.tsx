@@ -6,7 +6,7 @@ import { IoLogoFacebook, IoLogoTiktok, IoLogoWhatsapp } from 'react-icons/io5';
 
 export const Footer = () => {
   return (
-    <footer className="py-16 text-center bg-gray-900 text-white h-screen flex flex-col items-center justify-center ">
+    <footer className="py-16 text-center bg-zinc-600 text-white h-screen flex flex-col items-center justify-center ">
         <div className="container mx-auto">
 
             <div className='mb-20'>

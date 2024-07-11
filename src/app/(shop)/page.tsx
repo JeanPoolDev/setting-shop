@@ -8,6 +8,8 @@ import Image from 'next/image';
 import { Button } from '@nextui-org/react';
 import {Image as Imagen} from "@nextui-org/image";
 import { Carrusel } from '@/components/Carrusel';
+import { Banner } from '@/components/Banner';
+import { Opiniones } from '@/components/Opiniones';
 
 
 
@@ -32,7 +34,7 @@ export default async function Home({ searchParams } : Props) {
     <>
     
       <div>
-        <span className='font-semibold text-[90px] p-10 flex justify-center text-gray-60000'>
+        <span className='font-semibold text-3xl md:text-5xl lg:text-[90px] p-10 flex justify-center text-gray-600 text-center'>
           Tecnología de Vanguardia
         </span>
       </div>
@@ -55,14 +57,23 @@ export default async function Home({ searchParams } : Props) {
 
       <Carrusel />
 
+      <Banner />
+
       <Title
-        title="Todos los productos"
+        title="Nuestros productos"
         className='mb-22'
       />
 
       <ProductGrid 
         products={ products }
       />
+
+      <Title 
+        title='Comentarios'
+        className='mt-10'
+      />
+
+      <Opiniones />
 
       {/* <Pagination totalPages={ totalPages } /> */}
       
