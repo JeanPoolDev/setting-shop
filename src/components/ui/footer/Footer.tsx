@@ -1,91 +1,47 @@
 
-import {  ArrowUp, PhoneCallIcon } from 'lucide-react';
-import { Separator } from '../separator';
-import { IoLogoFacebook, IoLogoTiktok, IoLogoWhatsapp } from 'react-icons/io5';
-
-
 export const Footer = () => {
   return (
-    <footer className="py-16 text-center bg-zinc-600 text-white h-screen flex flex-col items-center justify-center ">
-        <div className="container mx-auto">
+    <footer className="bg-white text-black h-screen flex flex-col justify-center 
+    items-center mx-20">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between w-full text-center md:text-left mb-20">
+          <div className="w-full md:w-1/3 mb-6 md:mb-0">
+            <h3 className="text-4xl font-bold mb-4">Sobre Nosotros</h3>
+            <ul>
+              <li className="mb-2"><a href="/nosotros/" className="hover:underline text-xl">Nuestra Historía</a></li>
+              <li className="mb-2"><a href="/colaboradores/" className="hover:underline text-xl">Colaboradores</a></li>
+              <li className="mb-2"><a href="#" className="hover:underline text-xl">Tiendas</a></li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/3 mb-6 md:mb-0">
+            <h3 className="text-4xl font-bold mb-4">Ayuda</h3>
+            <ul>
+              <li className="mb-2"><a href="/faq/" className="hover:underline text-xl">FAQ</a></li>
+              <li className="mb-2"><a href="/devoluciones/" className="hover:underline text-xl">Devoluciones o Rembolsos</a></li>
+              <li className="mb-2"><a href="#" className="hover:underline text-xl">Contactanos</a></li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/3">
+            <h3 className="text-4xl font-bold mb-4">Siguenos</h3>
+            <ul>
+              <li className="mb-2"><a href="https://www.tiktok.com/@tiendassetting" className="hover:underline text-xl">
+                Tiktok</a></li>
+              <li className="mb-2"><a href="https://www.facebook.com/Setting.informatica?locale=es_LA" className="hover:underline text-xl">
+                Facebook</a></li>
+              <li className="mb-2"><a href="https://api.whatsapp.com/send?phone=+51925077931text=Vengo%20de%20Settingweb" className="hover:underline text-xl">
+                Whatsapp</a></li>
+            </ul>
+          </div>
 
-            <div className='mb-20'>
-              <p className="text-gray-400 mb-4 text-xl">
-                ¿Estás listo?
-              </p>
-              <h2 className="text-7xl font-bold mb-8 text-center">
-                Listo Para Comprar
-              </h2>
-            </div>
+          <div className="flex flex-col md:flex-row justify-center items-center mt-8">
+            <a href="#" className="mr-4 hover:underline text-2xl font-bold ">↑</a>
+          </div>
 
-            <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-16 mb-8">
-
-                <div className="text-xl font-semibold hover:border-b-2">
-                    <a href="mailto:jeanpooldev@gmail.com">
-                      jeanpooldev@gmail.com
-                    </a>
-                </div>
-
-                <div>
-                  <a 
-                  href='#'
-                  className="px-10 py-7 text-white rounded-full border-white border hover:bg-white hover:text-black text-xl">
-                    ¡ Comprar Ahóra !
-                  </a>
-                </div>
-
-                <div className="text-lg font-semibold">
-                    <div className="flex items-center space-x-2">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <PhoneCallIcon />
-                        </svg>
-                        <span>+51 973 902 225</span>
-                    </div>
-                    <p className="text-gray-400">
-                      Perú / Junín / Huancayo  (PEN)
-                    </p>
-                </div>
-
-            </div>
-
-            <Separator className='bg-gray-600 my-20'/>
-
-            <div className="flex justify-between space-x-4 items-center">
-              <div className='flex justify-center gap-5'>
-                <a 
-                  href="https://www.tiktok.com/@tiendassetting"
-                  className='rounded-full p-4 border hover:bg-white hover:text-black'
-                  >
-                    <IoLogoTiktok className='h-6 w-6'/>
-                </a>
-                <a 
-                  href="https://www.facebook.com/Setting.informatica?locale=es_LA"
-                  className='rounded-full p-4 border hover:bg-white hover:text-black'
-                  >
-                    <IoLogoFacebook className='h-6 w-6'/>
-                </a>
-                <a 
-                  href="https://api.whatsapp.com/send?phone=+51925077931text=Vengo%20de%20Settingweb"
-                  className='rounded-full p-4 border hover:bg-white hover:text-black'
-                  >
-                    <IoLogoWhatsapp className='h-6 w-6'/>
-                    
-                </a> 
-              </div>
-              <div>
-                <a href="https://api.whatsapp.com/send?phone=+51973902225&text=Ayuda%20de%20Soporte">
-                  Contáctanos
-                </a>
-              </div>            
-            </div>
+        </div>      
+        <div className="text-center mt-4 text-gray-600 text-sm">
+          © 2024 Setting-Shop. Todos los Derechos Reservados. <a href="#" className="hover:underline text-xl">Politica de Privacidad</a>. Sitío por Jp
         </div>
-        <div className="fixed bottom-4 right-4">
-            <a href="#" className="text-gray-400 hover:text-white">
-              ¡Subir!
-              <ArrowUp className='w-10 h-10'/>
-            </a>
-        </div>
+      </div>
     </footer>
-
   )
 }
