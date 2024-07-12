@@ -6,7 +6,7 @@ export default async function DevolucionesPage() {
 
   return (  
     <>
-      <div className="flex flex-col text-center justify-center items-center px-[250px]">
+      <div className="flex flex-col text-center justify-center items-center lg:px-[250px]">
 
         <h1 className="py-10 text-3xl font-bold">Devoluciones y Reembolsos</h1>
 
@@ -30,7 +30,7 @@ export default async function DevolucionesPage() {
         <div className="text-left text-lg mb-10">
         <p className="font-semibold mb-5">
         Envienos sus queja y consultas a los siguienes datos y numeros de la empresa responsable: </p>
-        <p>Pop Chart Lab Returns</p>
+        <p>setting@gmail.com</p>
         <p>3503 Holts Chapel Rd</p>
         <p>Greensboro NC 27401</p>
         </div>

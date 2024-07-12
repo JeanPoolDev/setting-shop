@@ -1,7 +1,7 @@
 
 export const Footer = () => {
   return (
-    <footer className="bg-white text-black h-screen flex flex-col justify-center 
+    <footer className="h-screen flex flex-col justify-center 
     items-center mx-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between w-full text-center md:text-left mb-20">
@@ -18,7 +18,7 @@ export const Footer = () => {
             <ul>
               <li className="mb-2"><a href="/faq/" className="hover:underline text-xl">FAQ</a></li>
               <li className="mb-2"><a href="/devoluciones/" className="hover:underline text-xl">Devoluciones o Rembolsos</a></li>
-              <li className="mb-2"><a href="#" className="hover:underline text-xl">Contactanos</a></li>
+              <li className="mb-2"><a href="https://api.whatsapp.com/send?phone=+51973902225&text=Ayuda%20de%20Soporte" className="hover:underline text-xl">Contactanos</a></li>
             </ul>
           </div>
           <div className="w-full md:w-1/3">
@@ -38,7 +38,7 @@ export const Footer = () => {
           </div>
 
         </div>      
-        <div className="text-center mt-4 text-gray-600 text-sm">
+        <div className="text-center mt-4 text-gray-600 text-sm dark:text-gray-300">
           © 2024 Setting-Shop. Todos los Derechos Reservados. <a href="#" className="hover:underline text-xl">Politica de Privacidad</a>. Sitío por Jp
         </div>
       </div>

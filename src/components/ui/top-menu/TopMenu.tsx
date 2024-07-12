@@ -23,7 +23,7 @@ const TopMenu = () => {
   }, [])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 flex px-0 md:px-3 lg:px-5 justify-between items-center w-full bg-white  z-50 p-5">
+    <nav className="fixed top-0 left-0 right-0 flex px-0 md:px-3 lg:px-5 justify-between items-center w-full bg-white z-50 p-5 dark:bg-zinc-900">
       {/* Logo */}
       <div>
         <Link href="/">

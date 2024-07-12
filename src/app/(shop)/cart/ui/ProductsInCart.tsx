@@ -30,7 +30,7 @@ export const ProductsInCart = () => {
   return (
     <>
       {productsInCart.map((product) => (
-        <div key={ `${ product.slug }`  } className="flex p-3 border-2 justify-between rounded-xl dark:bg-zinc-900 dark:border-white">
+        <div key={ `${ product.slug }`  } className="flex p-3 justify-between rounded-xl dark:bg-zinc-900">
           <ProductImage
             src={product.image }
             width={100}
@@ -40,7 +40,7 @@ export const ProductsInCart = () => {
               height: "120px",
             }}
             alt={product.title}
-            className="mr-5 rounded border"
+            className="mr-5 rounded"
           />
 
           <div>

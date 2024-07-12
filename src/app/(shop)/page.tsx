@@ -34,7 +34,7 @@ export default async function Home({ searchParams } : Props) {
     <>
     
       <div>
-        <span className='font-semibold text-3xl md:text-5xl lg:text-[90px] p-10 flex justify-center text-gray-600 text-center'>
+        <span className='font-semibold text-3xl md:text-5xl lg:text-[90px] p-10 flex justify-center text-zinc-950 text-center dark:text-gray-100'>
           Tecnología de Vanguardia
         </span>
       </div>
