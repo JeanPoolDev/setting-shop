@@ -32,12 +32,6 @@ export default async function Home({ searchParams } : Props) {
 
   return (
     <>
-    
-      <div>
-        <span className='font-semibold text-3xl md:text-5xl lg:text-[90px] p-10 flex justify-center text-zinc-950 text-center dark:text-gray-100'>
-          Tecnología de Vanguardia
-        </span>
-      </div>
 
       <div className='max-w-7xl lg:max-w-full xl:w-full m-auto mb-5 mt-10'>    
         <Image

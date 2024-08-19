@@ -61,16 +61,6 @@ export const Opiniones = () => {
         <CardBody>
           <p>{opi.comentario}</p>
         </CardBody>
-        <Divider/>
-        <CardFooter>
-          <Link
-            isExternal
-            showAnchorIcon
-            href={opi.url}
-          >
-            Visita sus redes sociales
-          </Link>
-        </CardFooter>
       </Card>
        ))}
     </div>
